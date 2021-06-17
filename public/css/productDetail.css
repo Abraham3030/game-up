@@ -88,7 +88,8 @@ img{
     height: 50PX;
 }
 .contenedor-imagenes-carrito{
-    margin-top: 10px;
+    margin-top: 40px;
+    
 
 }
 
@@ -157,11 +158,26 @@ img{
     background-color: cornflowerblue;
     color: white;
     font-weight: bold;
+    border: 0;
+    border-radius: 4px;
     font-size: 24px;
     font-family: 'Signika Negative', sans-serif;
-    
-    
 }
+
+.btn-productCart:hover {
+    background-color: #00db82;
+}
+.btn select{
+    
+    background-color: white;
+    outline: 0;
+    border-radius: 4px;
+    border: solid cornflowerblue 2px;
+}
+.btn select:hover {
+    border: #00db82 solid 2px;
+}
+
 
 
 .descripcion-envio{
@@ -225,6 +241,7 @@ input[type="checkbox"]:checked + .navbar__menu3{
 
 
   .footer {
+    margin-top: 50px;
     display: flex;
     align-items:flex-start;
     flex-flow: column;    
@@ -247,6 +264,7 @@ input[type="checkbox"]:checked + .navbar__menu3{
 
 .terminos {
     margin: 8px;
+    text-align: center;
 }
 
 .detalles-producto label:hover, .caracteristicas label:hover {
@@ -300,18 +318,22 @@ input[type="checkbox"]:checked + .navbar__menu3{
         align-items: center;
 
     }
-
+    .contenedor-imagenes-carrito{
+        margin-left: 50px;
+    }
     .contenedor-imagenes-carrito, .detalles{
         width: 50%;
     }
-}
 
-@media(min-width: 1200px) {
-
+    /*footer*/
     .footer{
-        display: none;        
+        display: none;
+    }
+    .footer-1200 ul li {
+        margin-left: -40px;
     }
     .footer-1200{
+        margin-top: 50px;
         display: flex;  
         justify-content: space-evenly;      
         flex-wrap: wrap;
@@ -353,5 +375,6 @@ input[type="checkbox"]:checked + .navbar__menu3{
         
     }
 
-    
+    /*fin footer*/
 }
+

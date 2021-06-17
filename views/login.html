@@ -9,39 +9,42 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b79dcbefc5.js" crossorigin="anonymous"></script>
+    <link rel="icon"  type="image/png" href="/images/logoGameUp.png">
     <title>Game UP</title>
+</head>
 </head>
 <body>
     <div class="contenedor-general">
+        
         <header>                
             <div class="nav-bar">            
-            <a href="/"><img id="logo" src="/images/logoGameUp.png"/></a>          
+                <a href="/"><img id="logo" src="/images/logoGameUp.png"/></a>          
             </div>                                
-    </header>
+        </header>
     
-    <div class="contenedor">
-        
-            <div class="tab-items">
-                <div class="marco">
-                    <p>Iniciar Sesion</p>   
-                </div>
-                <div class="marco">
-                    <a href="/register"><p>Crear Cuenta</p></a>
-                </div>
-                
-            </div>
-        
+        <div class="contenedor">
 
-        <form action="#" method="POST">            
-            <input type="text" name="name" placeholder="Email*" >            
-            <input type="password" name="password" placeholder="Password*" >
-            <div class="btn-container">
-                <button class="btn-login" type="submit">INGRESAR</button>
-            </div>
+                <div class="tab-items">
+                    <div class="marco">
+                        <p>Iniciar Sesion</p>   
+                    </div>
+                    <div class="marco">
+                        <a href="/register"><p>Crear Cuenta</p></a>
+                    </div>
+                </div>
             
-        </form>     
+
+            <form action="/" method="POST" >            
+                <input class="marco-input" type="text" name="name" placeholder="Email*" required />            
+                <input type="password" name="password" placeholder="Password*" required />
+                <div class="btn-container">
+                    <button class="btn-login" type="submit">INGRESAR</button>
+                </div>
+
+            </form>     
+        </div>
     </div>
-    </div>
+
     <footer >
         <div class="footer">
             <div class="elemento-footer">
@@ -49,9 +52,6 @@
             </div>
             <div class="elemento-footer">
                 <h2>SERVICIO AL CLIENTE</h2><i class="fas fa-plus"></i>
-            </div>
-            <div class="elemento-footer">
-                <h2>AYUDA</h2><i class="fas fa-plus"></i>
             </div>
             <div class="elemento-footer">
                 <h2>REDES SOCIALES</h2><i class="fas fa-plus"></i>
@@ -72,20 +72,20 @@
             <div>
                 <h2>INFORMACION</h2>
                 <ul>
-                    <li><a href="#">Sobre Nosotros</a></li>
-                    <li><a href="#">Trabaja con Nosotros</a></li>
+                    <li><a href="/login">Sobre Nosotros</a></li>
+                    <li><a href="/login">Trabaja con Nosotros</a></li>
                 </ul>
             </div>
             <div>
                 <h2>SERVICIO AL CLIENTE</h2>
                 <ul>
-                    <li><a href="#">Preguntas Frecuentes</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">Tips de Seguridad</a></li>
-                    <li><a href="#">Formas de Pago</a></li>
-                    <li><a href="#">Politicas de Privacidad</a></li>
-                    <li><a href="#">Politicas de Envios</a></li>
-                    <li><a href="#">Devoluciones y Cancelaciones</a></li>
+                    <li><a href="/login">Preguntas Frecuentes</a></li>
+                    <li><a href="/login">Contacto</a></li>
+                    <li><a href="/login">Tips de Seguridad</a></li>
+                    <li><a href="/login">Formas de Pago</a></li>
+                    <li><a href="/login">Politicas de Privacidad</a></li>
+                    <li><a href="/login">Politicas de Envios</a></li>
+                    <li><a href="/login">Devoluciones y Cancelaciones</a></li>
                 </ul>
             </div>
             <div>
