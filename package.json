@@ -1,0 +1,31 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "Sitio de ecommerce de venta de videojuegos y articulos electronicos en general.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abraham3030/grupo_4_ecommerce.git"
+  },
+  "keywords": [
+    "nodeJS",
+    "web",
+    "ecommerce"
+  ],
+  "author": "Abraham Montelongo, Cesar Villa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abraham3030/grupo_4_ecommerce/issues"
+  },
+  "homepage": "https://github.com/Abraham3030/grupo_4_ecommerce#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

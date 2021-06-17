@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/117b0fb8d8.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/productDetail.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <title>Game UP</title>
+</head>
+<body>       
+    <header>
+        <form id="hamburguer">
+            <div class="contenedor-login-fas" id="bars">
+                <a  href="/register" >
+                    <i class="fas fa-bars"></i>
+                </a>
+            </div>
+        </form>
+        <div id="logo-header">
+            <img id="logo" src="/images/logoGameUp.png"/>
+        </div>
+        <div id="search">
+            <form action="#" id="form-search">
+                <input id="buscador" type="text" placeholder="Buscar productos"/>
+                <button id="boton-search"><i class="fas fa-search"></i></button>
+            </form>                               
+        </div>
+        <form id="login">
+            <div class="contenedor-login-fas" id="user">
+                <a href="/login"><i class="far fa-user"></i></a>
+            </div>
+            <div class="contenedor-login-fas" id="cart">
+                <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </form>
+    </header>
+    <div class="contenedor"> 
+        <div class="vista768">
+            <div class="contenedor-imagenes-carrito">   
+                <div class="contenedor-imagenes">
+                    <div class="imagenes">
+                        <img id="imgbody" src="/images/productDetail/segunda-imagen.webp" alt="banner">
+                        <img id="imgbody" src="/images/productDetail/tercera imagen.webp" alt="banner">
+                        <img id="imgbody" src="/images/productDetail/cuearta-imagen.webp" alt="banner"> 
+                    </div>
+                    <div class="imagen-principal">
+                        <img src="/images/productDetail/imagen principal.webp" alt="banner">
+                    </div>
+                </div>
+            </div>
+
+            <div class="detalles">
+                <div id="titulo-juego">
+                    <h3>PS4 Juego Mortal Kombat 11 Ultimate Edition</h3>
+
+                </div>
+                <div class="precio">
+                    <h4>$1,399.00</h4>
+                </div>
+                <div >
+                    <form class="btn" action="/productCart" method="POST">
+                            <label for="productCart"></label>
+                            <select class="label-productCart" name="productCart" id="productCart">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                            </select>
+                            <div class="espacio-form"></div>
+                            <input class="btn-productCart" type="submit" value="Añadir al carrito">
+                    </form>
+                </div>
+                <div class="descripcion-envio">
+                    <div class="envio">
+                        <i class="fas fa-shipping-fast"><span> Envío Gratis</span></i>
+                        <div id="letra-envio" ><p>Recibelo pronto en tu domicilio</p> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="descripcion">
+            <div class="detalles-producto espacio">
+                <div>
+                    <label for="show-nav2">
+                        Detalle del Producto
+                    </label>  
+                </div>
+                    <input type="checkbox" id="show-nav2" hidden>
+                    <ul class="navbar__menu2">
+                      <li>                                
+                        <strong>Mortal Kombat 11 Ultimate</strong> es un verdadero coloso de la lucha, con contenido como para que ningún jugador pueda pasar por alto a la ligera a poco que le interese este género tradicional. Si es inagotable en su vertiente online
+                                Los 37 personajes tienen su interés gracias sobre todo a lo contrastante de sus movimientos especiales, por lo que utilizarlos hasta cierto nivel de profundidad en esos modos offline
+                                La idea de ir ganando consumibles para desbloquear skins, fatalitys y cientos de cosas más es muy buena para un juego de lucha planteado para durar años
+                      </li>
+                    </ul>
+            </div>
+            
+            <div class="caracteristicas espacio">
+                <div>
+                    <label for="show-nav3">
+                        Características destacadas
+                    </label>  
+                </div>
+                    <input type="checkbox" id="show-nav3" hidden>
+                    <ul class="navbar__menu3">
+                        <li>Multiplataforma y multigeneración.</li>
+                        <li>Tiempos de carga considerablemente reducidos.</li>
+                        <li>Gráficos mejorados</li>
+                        <li>Resolución dinámica 4K</li>
+                    </ul>
+            </div>    
+        </div>
+        
+        
+    </div>
+    <footer >
+        <div class="footer">
+            <div class="elemento-footer">
+                <h2>INFORMACION</h2><i class="fas fa-plus"></i>
+            </div>
+            <div class="elemento-footer">
+                <h2>SERVICIO AL CLIENTE</h2><i class="fas fa-plus"></i>
+            </div>
+            <div class="elemento-footer">
+                <h2>AYUDA</h2><i class="fas fa-plus"></i>
+            </div>
+            <div class="elemento-footer">
+                <h2>REDES SOCIALES</h2><i class="fas fa-plus"></i>
+            </div>
+            <div class="elemento-footer">
+                <h2>FORMAS DE PAGO</h2><i class="fas fa-plus"></i>
+            </div>
+            <div class="terminos">
+                <p><span style="color: cornflowerblue;">Terminos y Condiciones </span> | <span style="color: cornflowerblue;"> Aviso de Privacidad</span>   2021 Grupo4. Todos los Derechos
+                    Reservados
+                </p>
+            </div>
+        </div>
+        
+    </footer>
+    <footer >
+        <div class="footer-1200">
+            <div>
+                <h2>INFORMACION</h2>
+                <ul>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Trabaja con Nosotros</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>SERVICIO AL CLIENTE</h2>
+                <ul>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Tips de Seguridad</a></li>
+                    <li><a href="#">Formas de Pago</a></li>
+                    <li><a href="#">Politicas de Privacidad</a></li>
+                    <li><a href="#">Politicas de Envios</a></li>
+                    <li><a href="#">Devoluciones y Cancelaciones</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>FORMAS DE PAGO</h2>
+                <img src="/images/productDetail/formas-pago.PNG" alt="Formas de Pago">
+            </div>
+            <div class="logos-social-media">
+                <h2>REDES SOCIALES</h2>
+                <img src="/images/facebook.png" alt="">
+                <img src="/images/twitter.png" alt="">
+                <img src="/images/instagram.png" alt="">
+                <img src="/images/whatsapp.png" alt="">
+                <img src="/images/youtube.png" alt="">
+                
+                
+                
+                
+
+            </div>
+            <div class="terminos">
+                <p><span style="color: cornflowerblue;">Terminos y Condiciones </span> | <span style="color: cornflowerblue;"> Aviso de Privacidad</span>   2021 Grupo4. Todos los Derechos
+                    Reservados
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
