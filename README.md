@@ -23,9 +23,12 @@ https://www.amazon.com.mx/
 
 Estos son los sitios de mas ventas en el mundo asi que fueron tomados como inspiración.
 
-## *Enlace al tablero de trabajo Sprint 2*  
+## *Enlaces a tableros de trabajo*  
 
-El siguiente enlace muestra el tablero de trabajo del sprint2.
-https://trello.com/b/3oeF1LP0   
+Enlace Sprint - 2
+https://trello.com/b/3oeF1LP0
+
+Enlace Sprint - 3
+https://trello.com/b/MDz4vUyq/sprint-3
 
 

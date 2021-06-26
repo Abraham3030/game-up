@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Abraham3030/grupo_4_ecommerce#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.1"
   },
   "devDependencies": {

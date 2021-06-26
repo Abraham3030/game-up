@@ -1,41 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/head'); %>
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <script src="https://kit.fontawesome.com/b79dcbefc5.js" crossorigin="anonymous"></script>
-    <link rel="icon"  type="image/png" href="/images/logoGameUp.png">
-    <title>Game UP</title>
 </head>
 <body>
+    
     <header>
-        <form id="hamburguer" >
-            <div class="contenedor-login-fas" id="bars">
-                <a  href="/register" >
-                    <i class="fas fa-bars"></i>
-                </a>
-            </div>
-        </form>
-        <div id="logo-header">
-            <img id="logo" src="/images/logoGameUp.png"/>
-        </div>
-        <div id="search">
-            <form action="/" id="form-search" method="POST">
-                <input id="buscador" type="text" placeholder="Buscar productos"/>
-                <button id="boton-search"><i class="fas fa-search"></i></button>
-            </form>                               
-        </div>
-        <form id="login">
-            <div class="contenedor-login-fas" id="user">
-                <a href="/login"><i class="far fa-user"></i></a>
-            </div>
-            <div class="contenedor-login-fas" id="cart">
-                <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
-            </div>
-        </form>
+        <%- include('../partials/header');%>
     </header>
     
     <div class="banner-container">
@@ -50,6 +22,7 @@
             <section >
                 <h1 class="titulares">Populares Playstation</h1>
                 <div class="caja-wrap">
+                    
                     <article class="caja-box-shadow">
                         <a href="productDetail"><img  src="/images/index/mortal-kombat.png" alt="Mortal Kombat 11"></a>                        
                         <div class="caja">
@@ -58,9 +31,7 @@
                             <p class="precios">Precio $1399.00</p>
                             <p class="descuentos">Descuento 40% OFF</p>                            
                         </div>
-                        <p class="descripciones">Mortal Kombat 11</p>
-                        
-                        
+                        <p class="descripciones">Mortal Kombat 11</p>                                                
                     </article>
                     <article class="caja-box-shadow">
                         <img  src="/images/index/ff7-remake-ps4-1.jpg" alt="Final Fantasy VII">
@@ -237,72 +208,9 @@
     </div>
     </div>
     <!-- Fin Contenudo anterior-->
-    
-
-    <footer class="footer">
-        <div class="elemento-footer">
-            <h2>INFORMACION</h2><i class="fas fa-plus"></i>
-        </div>
-        <div class="elemento-footer">
-            <h2>SERVICIO AL CLIENTE</h2><i class="fas fa-plus"></i>
-        </div>
-        <div class="elemento-footer">
-            <h2>REDES SOCIALES</h2><i class="fas fa-plus"></i>
-        </div>
-        <div class="elemento-footer">
-            <h2>FORMAS DE PAGO</h2><i class="fas fa-plus"></i>
-        </div>
-        <div class="terminos">
-            <p><span style="color: cornflowerblue;">Terminos y Condiciones </span> | <span style="color: cornflowerblue;"> Aviso de Privacidad</span>   2021 Grupo4. Todos los Derechos
-                Reservados
-            </p>
-        </div>
-    </footer>
 
     <footer >
-        <div class="footer-1200">
-            <div>
-                <h2>INFORMACION</h2>
-                <ul>
-                    <li><a href="/">Sobre Nosotros</a></li>
-                    <li><a href="/">Trabaja con Nosotros</a></li>
-                </ul>
-            </div>
-            <div>
-                <h2>SERVICIO AL CLIENTE</h2>
-                <ul>
-                    <li><a href="/">Preguntas Frecuentes</a></li>
-                    <li><a href="/">Contacto</a></li>
-                    <li><a href="/">Tips de Seguridad</a></li>
-                    <li><a href="/">Formas de Pago</a></li>
-                    <li><a href="/">Politicas de Privacidad</a></li>
-                    <li><a href="/">Politicas de Envios</a></li>
-                    <li><a href="/">Devoluciones y Cancelaciones</a></li>
-                </ul>
-            </div>
-            <div>
-                <h2>FORMAS DE PAGO</h2>
-                <img src="/images/productDetail/formas-pago.PNG" alt="Formas de Pago">
-            </div>
-            <div class="logos-social-media">
-                <h2>REDES SOCIALES</h2>
-                <img src="/images/facebook.png" alt="">
-                <img src="/images/twitter.png" alt="">
-                <img src="/images/instagram.png" alt="">
-                <img src="/images/whatsapp.png" alt="">
-                <img src="/images/youtube.png" alt="">
-                
-                
-                
-                
-
-            </div>
-            <div class="terminos">
-                <p><span style="color: cornflowerblue;">Terminos y Condiciones </span> | <span style="color: cornflowerblue;"> Aviso de Privacidad</span>   2021 Grupo4. Todos los Derechos
-                    Reservados
-                </p>
-            </div>
-        </div>
+        <%- include('../partials/footer') %> 
     </footer>
     
 </body>
