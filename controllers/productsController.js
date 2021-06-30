@@ -1,4 +1,5 @@
 const fs = require('fs');
+const productosModel = require('../models/productos.model');
 
 const controlador = {
     
@@ -12,6 +13,28 @@ const controlador = {
     },
     productCart: (req, res) => {
         res.render('productCart');
+    },
+    createProduct: (req,res) => {
+        res.render('crearProducto');
+    },
+
+    createProduct2: (req,res) => {
+        try{
+            console.log(req.body);
+        const producto = req.body;
+        productosModel.create(producto)
+
+        
+        //res.redirect('crearProducto');
+        res.render('crearProducto');
+       //res.send(req.body);
+        }catch(err){
+            console.log(err);
+        }
+        
+
+
+        
     }
     
 };

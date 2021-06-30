@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head') %> 
+    <link rel="stylesheet" href="/css/login-register.css">
+</head>
+</head>
+<body>
+    <div class="contenedor-general">
+        
+        <header>                
+            <div class="nav-bar">            
+                <a href="/"><img id="logo" src="/images/logoGameUp.png"/></a>          
+            </div>                                
+        </header>
+    
+        <div class="contenedor">
+
+                <div class="tab-items">
+                    <div class="marco">
+                        <p>Carga y Actualiza productos</p>   
+                    </div>                    
+                </div>
+            
+
+            <form  method="POST" >            
+                <input class="marco-input" type="text" name="name" placeholder="Nombre*" required />
+                <input class="marco-input" type="number" name="precio" placeholder="Precio*" required />
+                <input class="marco-input" type="number" name="descuento" placeholder="Descuento" required />
+                <input class="marco-input" type="text" name="poster" placeholder="Ruta Imagen" required />
+                <input class="marco-input" type="text" name="plataforma" placeholder="Plataforma" required />
+                <div class="btn-container">
+                    <button class="btn-login" type="submit">GUARDAR</button>
+                </div>
+
+            </form>     
+        </div>
+    </div>
+
+    <footer >
+       <%- include('../partials/footer') %> 
+    </footer>
+    
+    
+</body>
+</html>
