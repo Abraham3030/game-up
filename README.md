@@ -8,7 +8,6 @@ Una pagina sencilla de usar con un diseño limpio y llamativo, nuestro audiencia
 ## *Integrantes*
 - José Abraham Montelongo Campos  
 - César Antonio Villa Flores  
-- María Fernanda Gutiérrez Galván  
 
 Instructor: Alfonso Banda
 
