@@ -2,35 +2,59 @@
     box-sizing: border-box;
 }
 
+body{
+    position: relative;
+    top: 56px;
+}
+
 p,h1,h2,h3,h4,a,input,button,li,label {
     font-family: 'Signika Negative', sans-serif;
 }
 
 /*Nuevo header*/
 header {
+    background-color: #FFF;
     width: 100%;
     height: 56px;
     display: flex;
     justify-content: center;
     align-content: center;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+/*id hamburguer*/
+#hamburguer{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+}
+.contenedor-login-fas{
+    width: 100%;
+    margin: 5px;
+}
+#bars{
+    background-color: #00db82;
+    border-radius: 5px;
+    padding: 5px;
+}
+.fa-bars {
+    color: white;
+}
+/*fin id hamburguer*/
+/*id logo-header*/
+#logo-header {
+    width: 20%;
 }
 #logo-header img {
     max-width: 100%;
     height: 56px;  
 }
-#logo-header {
-    width: 20%;
-}
-#buscador {
-    outline: none;
-    border-radius: 5px;
-    border: 0;
-    width: 80%;
-}
-#boton-search {
-    border: 0;
-    width: 20%;
-}
+/*id logo-header*/
+/*id search*/
 #search {
     width: 50%;
     padding: 6px;
@@ -41,17 +65,26 @@ header {
     display: flex;
     height: 44px;
 }
+#buscador {
+    outline: none;
+    border-radius: 5px;
+    border: 0;
+    width: 80%;
+}
 #boton-search {
+    border: 0;
+    width: 20%;
     border-radius: 3px;
     color: white;
     background-color: #00db82;
     text-align: center;
 }
-.contenedor-login-fas{
-    width: 100%;
-    margin: 5px;
+.fa-search{
+    color: white;
 }
-#login, #hamburguer{
+/* fin id search*/
+/*id login*/
+#login{
     width: 20%;
     display: flex;
     justify-content: center;
@@ -59,17 +92,51 @@ header {
     text-align: center;
     font-size: 30px;
 }
+.contenedor-login-fas{
+    width: 100%;
+    margin: 5px;
+}
 #user {
     display: none;
 }
-#cart, #bars{
+#cart{
     background-color: #00db82;
     border-radius: 5px;
     padding: 5px;
 }
-.fa-shopping-cart, .fa-user, .fa-search, .fa-bars {
+.fa-shopping-cart, .fa-user{
     color: white;
 }
+.navbar-hamburguer{
+    background-color: #FFF;
+    position: absolute;
+    left: 0;
+    top: 56px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+.navbar-hamburguer a{
+    list-style: none;
+    text-decoration: none;
+    color: #00db82;
+}
+.navbar-hamburguer a:hover{
+    color: white;
+}
+.li-hover:hover{
+    background-color: #00db82;
+}
+
+
+input[type="checkbox"]:checked + .navbar-hamburguer{
+    display: block;
+}
+/* fin id login*/
 /*Fin Nuevo Header*/
 
 
@@ -275,24 +342,42 @@ input[type="checkbox"]:checked + .navbar__menu3{
     display: none;
 }
 
-
+@media (min-width: 576px) {
+    /*Nuevo header*/
+    #hamburguer {
+        width: 15%;
+    }
+    #logo-header {
+        width: 20%;
+    }
+    #search {
+        width: 50%;
+    }
+    #login {
+        width: 15%;
+    }
+}
 
 @media(min-width: 768px){
+    /*Nuevo header*/
     /*Nuevo header*/
     #hamburguer {
         width: 10%;
     }
-    #login {
+    #logo-header {
         width: 10%;
     }
     #search {
         width: 60%;
     }
+    #buscador {
+        width: 85%;
+    }
+    #boton-search {
+        width: 15%; 
+    }
     #login {
         width: 20%;
-    }
-    #logo-header img {
-        width: 100%;
     }
     #user {
         display: block;
@@ -378,3 +463,50 @@ input[type="checkbox"]:checked + .navbar__menu3{
     /*fin footer*/
 }
 
+@media (min-width: 992px) {
+    /*Nuevo header*/
+    #hamburguer {
+        width: 8%;
+    }
+    #logo-header {
+        
+        width: 8%;
+    }
+    #search {
+        
+        width: 68%;
+    }
+    #buscador {
+        width: 90%;
+    }
+    #boton-search {
+        width: 10%;
+        
+    }
+    #login {
+        width: 16%;
+    }
+}
+
+@media (min-width: 1200px) {
+    /*Nuevo header*/
+    #hamburguer {
+        width: 5%;
+    }
+    #logo-header {
+        width: 10%;
+    }
+    #search {
+        width: 75%;
+    }
+    #buscador {
+        width: 94%;
+    }
+    #boton-search {
+        width: 6%;
+        
+    }
+    #login {
+        width: 10%;
+    }
+}
