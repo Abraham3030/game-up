@@ -1,12 +1,26 @@
-<form id="hamburguer" >
+<form id="hamburguer" name="hamburguer" name="">
     <div class="contenedor-login-fas" id="bars">
-        <a  href="/register" >
+        <label for="show-hamburguer">
             <i class="fas fa-bars"></i>
-        </a>
+        </label>
+        
+        <div>
+            <input type="checkbox" id="show-hamburguer" hidden>
+            <ul class="navbar-hamburguer">
+              <li class="li-hover "><a href="/login">Iniciar sesion</a></li>
+              <li class="li-hover "><a href="/register">Crear cuenta</a></li>
+              <li class="li-hover consolas"><a href="#playstation">PlayStation</a></li>
+              <li class="li-hover consolas"><a href="#nintendo">Nintendo</a></li>
+              
+            </ul>
+        </div>
     </div>
+</div>
+    
+    
 </form>
 <div id="logo-header">
-    <img id="logo" src="/images/logoGameUp.png"/>
+    <a href="/"><img id="logo" src="/images/logoGameUp.png"/></a>
 </div>
 <div id="search">
     <form action="/" id="form-search" method="POST">
@@ -22,3 +36,4 @@
         <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
     </div>
 </form>
+

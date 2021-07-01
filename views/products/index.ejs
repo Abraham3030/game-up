@@ -9,18 +9,24 @@
     <header>
         <%- include('../partials/header');%>
     </header>
+    <div id="content-navbar-desk">
+        <ul id="navbar-desk">
+            <li><a href="#playstation">PlayStation</a></li>
+            <li><a href="#nintendo">Nintendo Switch</a></li>
+        </ul>
+    </div>
     
     <div class="banner-container">
-        <i class="fas fa-chevron-left flechas"></i>        
+        <!--<i class="fas fa-chevron-left flechas"></i>-->
         <img id="banner" src="/images/index/img-home-banner.jpg"/>
-        <i class="fas fa-chevron-right flechas"></i>
+        <!--<i class="fas fa-chevron-right flechas"></i>-->
     </div>
     <!--Nuevo contenido main imagenes-->
     <main>
         <div>
         <div class="contendor-main">
             <section >
-                <h1 class="titulares">Populares Playstation</h1>
+                <h1 id="playstation"  class="titulares">Populares Playstation</h1>
                 <div class="caja-wrap">
                     <!-- <% for( let index = 0; index < productos.length; index++ ) { %>
                         <article class="caja-box-shadow">
@@ -69,7 +75,7 @@
                 </div>
             </section>
             <section >
-                <h1 class="titulares">Populares Nintendo</h1>
+                <h1 id="nintendo" class="titulares">Populares Nintendo</h1>
                 <div class="caja-wrap">
                     <article class="caja-box-shadow">
                         <img  src="/images/index/smash-sw-1.jpg" alt="Smash Brothers Ultimate">

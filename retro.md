@@ -16,4 +16,8 @@ Creo que trabajamos muy comodos, tenemos una buena relacion de equipo, debemos d
 
 ## Cesar Antonio Villa Flores:
 
-Hicimos bien en repartirnos las actividades desde el comienzo, cada quien tenia sus vistas a construir y eso ayudo mucho a un buen flujo de trabajo. Nos falto saber compartir el codigo de alguna manera sencilla, pero fue mas que nada por cuestiones tecnicas que con EJS vamos a resolver.
+Hicimos bien en repartirnos las actividades desde el comienzo, cada quien tenia sus vistas a construir y eso ayudo mucho a un buen flujo de trabajo. Nos falto saber compartir el codigo de alguna manera sencilla, pero fue mas que nada por cuestiones tecnicas que con EJS vamos a resolver.  
+
+## José Abraham Montelongo Campos:
+
+Todo va fluyendo de manera manera adecuada, las metas por sprint se van cumpliendo y seguimos aprendiendo bastante, van saliendo detalles por resolver pero nada imposible, con dedicación y esfuerzo llegaremos a buen puerto.
