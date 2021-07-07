@@ -251,7 +251,25 @@ img{
     margin-top: 5%;
     border: solid 0.5px grey;
 }
-
+.action-button {
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    margin-top: 15px;
+    
+}
+.action-button.edit {
+    background-color: chocolate;
+  }
+  .action-button.delete {
+    background-color: rgb(248, 69, 37);
+    
+  }
 
 .descripcion{
     

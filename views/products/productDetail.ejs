@@ -13,27 +13,24 @@
         <div class="vista768">
             <div class="contenedor-imagenes-carrito">   
                 <div class="contenedor-imagenes">
-                    <div class="imagenes">
-                        <img id="imgbody" src="/images/productDetail/segunda-imagen.webp" alt="banner">
-                        <img id="imgbody" src="/images/productDetail/tercera imagen.webp" alt="banner">
-                        <img id="imgbody" src="/images/productDetail/cuearta-imagen.webp" alt="banner"> 
-                    </div>
                     <div class="imagen-principal">
-                        <img src="/images/productDetail/imagen principal.webp" alt="banner">
+                        <img src="/images/index/<%=product.image%>" alt="banner">
                     </div>
                 </div>
             </div>
 
             <div class="detalles">
                 <div id="titulo-juego">
-                    <h3>PS4 Juego Mortal Kombat 11 Ultimate Edition</h3>
+                    <h3><%=product.name%></h3>
 
                 </div>
                 <div class="precio">
-                    <h4>$1,399.00</h4>
+                    <h4>$<%=product.price%></h4>
+                    <h4><%=product.discount%>% OFF</h4>
+                    <h4>Final price$<%=`${product.price-((product.price*product.discount)/100)}`%></h4>
                 </div>
                 <div >
-                    <form class="btn" action="/productCart" method="POST">
+                    <!--<form class="btn" action="/productCart" method="POST">
                             <label for="productCart"></label>
                             <select class="label-productCart" name="productCart" id="productCart">
                               <option value="1">1</option>
@@ -43,7 +40,7 @@
                             </select>
                             <div class="espacio-form"></div>
                             <input class="btn-productCart" type="submit" value="Añadir al carrito">
-                    </form>
+                    </form>-->
                 </div>
                 <div class="descripcion-envio">
                     <div class="envio">
@@ -51,6 +48,10 @@
                         <div id="letra-envio" ><p>Recibelo pronto en tu domicilio</p> </div>
                     </div>
                 </div>
+                <a href="/products/<%=product.id%>/edit" class="action-button edit">EDITAR PRODUCTO</a>
+                <form action="/products/<%=product.id%>?_method=DELETE" method="POST" style="display: inline-flex">
+                    <button type="submit" class="action-button delete">ELIMINAR</button>
+                </form>
             </div>
         </div>
         <div class="descripcion">
@@ -63,9 +64,8 @@
                     <input type="checkbox" id="show-nav2" hidden>
                     <ul class="navbar__menu2">
                       <li>                                
-                        <strong>Mortal Kombat 11 Ultimate</strong> es un verdadero coloso de la lucha, con contenido como para que ningún jugador pueda pasar por alto a la ligera a poco que le interese este género tradicional. Si es inagotable en su vertiente online
-                                Los 37 personajes tienen su interés gracias sobre todo a lo contrastante de sus movimientos especiales, por lo que utilizarlos hasta cierto nivel de profundidad en esos modos offline
-                                La idea de ir ganando consumibles para desbloquear skins, fatalitys y cientos de cosas más es muy buena para un juego de lucha planteado para durar años
+                         
+                        <b><%=product.description%></b>
                       </li>
                     </ul>
             </div>

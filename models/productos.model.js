@@ -9,7 +9,7 @@
  */
 
 const fs = require('fs');
-const productos = require('../database/productos.json');
+//const productos = require('../database/productos.json');
 const path = require('path');
 const productosModel = {
     create: function(productoInfo){

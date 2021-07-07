@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "name": "Final Fantasy VII",
+    "price": 1299.99,
+    "discount": 20,
+    "category": "playstation",
+    "description": "Juego Final Fantasy VII",
+    "image": "ff7-remake-ps4-1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "God Of War PS4",
+    "price": 1659.99,
+    "discount": 10,
+    "category": "playstation",
+    "description": "Juego God Of War PS4",
+    "image": "gow-ps4-1.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Horizon Zero Dawn",
+    "price": 1659.99,
+    "discount": 10,
+    "category": "playstation",
+    "description": "Juego Horizon Zero Dawn",
+    "image": "hzd-ps4-1.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Smash Brothers Ultimate",
+    "price": 1658,
+    "discount": 20,
+    "category": "switch",
+    "description": "Juego Smash Brothers Ultimate",
+    "image": "smash-sw-1.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Zelda Breath of The Wild",
+    "price": 1399,
+    "discount": 20,
+    "category": "switch",
+    "description": "Juego Zelda Breath of The Wild",
+    "image": "botw-sw-1.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Smash Brothers Ultimate",
+    "price": 1658,
+    "discount": 20,
+    "category": "switch",
+    "description": "Juego Smash Brothers Ultimate",
+    "image": "smash-sw-1.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Zelda Breath of The Wild",
+    "price": 1399,
+    "discount": 20,
+    "category": "switch",
+    "description": "Juego Zelda Breath of The Wild",
+    "image": "botw-sw-1.jpg"
+  },
+  {
+    "name": "Resident Evil",
+    "price": "1500",
+    "discount": "10",
+    "category": "playstation",
+    "description": "kwekwe",
+    "id": 8,
+    "image": "new-product.jpg"
+  },
+  {
+    "name": "prueba1",
+    "price": "100",
+    "discount": "15",
+    "category": "playstation",
+    "description": "prueba edicion y despues eliminar",
+    "id": 9,
+    "image": "new-product.jpg"
+  }
+]

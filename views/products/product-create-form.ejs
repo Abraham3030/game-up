@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head') %> 
+    <link rel="stylesheet" href="/css/create.css">
+</head>
+<body>
+    <div class="contenedor-general">
+        <header>                
+            <div class="nav-bar">            
+            <a href="/"><img id="logo" src="/images/logoGameUp.png"/></a>
+            </div>                                
+        </header>
+        <div class="contenedor margen-login-register">
+            <div class="tab-items">
+                <div class="marco">
+                    <p>Crear producto</p>
+                </div>
+            </div>
+            <form action="/products/create" method="POST">
+                <label for="name">Nombre del producto:</label>
+			    <input type="text" id="name" name="name" placeholder="Ej: Resident Evil" class="form-input" value="">
+                <label for="price" class="form-label">Precio del producto:</label>
+				<input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input" value="">
+                <label for="discount" class="form-label">Descuento:</label>
+				<input type="text" id="discount" name="discount" placeholder="Ej: 15" class="form-input" value="">
+                <label for="category" class="form-label">Categoría:</label>
+				<select name="category" id="category" class="form-input">
+					<option value="">Elegir opción</option>
+                    <option value="playstation" selected="">Play Station</option>
+                    <option value="switch" selected="">Nintendo Switch</option>
+				</select>
+                <div >
+                    <label for="description" class="form-label">Descipción:</label>
+                    <textarea name="description" id="description" class="form-input"></textarea>
+                </div>
+                <div class="btn-container">
+                    <button class="btn-login" type="submit">Guardar producto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer >
+       <%- include('../partials/footer') %>         
+    </footer>
+</body>
+</html>
