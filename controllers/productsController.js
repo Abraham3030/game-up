@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-//const productosModel = require('../models/productos.model');
+const model = require('../models/productos.model');
 
 const productsFilePath = path.join(__dirname, "../database/productsDataBase.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
@@ -8,7 +8,6 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
-    
     index: (req, res) => {
         const playstation = products.filter((product)=>{
 			return product.category === 'playstation';
@@ -18,14 +17,11 @@ const controller = {
 		});
 		res.render('index', {playstation, nintendoswitch});
     },
-    products: (req, res) => {
-        res.render("products", { products });
-    },
-    detail: (req, res) => {
-        let productId = req.params.id;
-        console.log(productId);
+    search: (req, res) => {
+      let productName = req.params.name;
+        console.log(productName);
         const product = products.find((producto) => {
-          return producto.id == productId;
+          return producto.name == productName;
         });
         console.log(product);
         if (product) {
@@ -34,67 +30,41 @@ const controller = {
           res.render("error");
         }
     },
-    create: (req, res) => {
-        res.render('product-create-form');
+
+    playstation: (req, res) => {
+      const playstation = products.filter((product)=>{
+        return product.category === 'playstation';
+      });
+      res.render('playstation', {playstation});
     },
-    store: (req, res) => {
-        // Do the magic
-        const productInfo = req.body;
-        products.push({
-          ...productInfo,
-          id: products.length + 1,
-          image: "new-product.jpg",
-        });
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-        res.redirect("/products");
+    nintendoswitch: (req, res) => {
+      const nintendoswitch = products.filter((product)=>{
+        return product.category === 'switch';
+      });
+      res.render('nintendoswitch', {nintendoswitch});
     },
-    edit: (req, res) => {
-        const productToEdit = products.find((product) => {
-          return product.id == req.params.id;      
-        });
-        
-        if (productToEdit) {
-          res.render("product-edit-form", { productToEdit });
-        } else {
-          res.render("error");
-        }
+    productCart: (req, res) => {
+      res.render('productCart');
     },
-    update: (req, res) => {
-        const productInfo = req.body;
-        const productIdex = products.findIndex(producto =>{
-          return producto.id == req.params.id;
-        });
-    
-        products[productIdex]={...products[productIdex], ...productInfo};
-    
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-        res.redirect("/");
-    },
-    destroy: (req, res) => {
-    
-        const productIdex = products.findIndex(producto =>{
-          return producto.id == req.params.id;
-        });
-    
-        products.splice(productIdex, 1);
-        
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-        res.redirect("/products");
-        // Do the magic
-    }
+    products: model.products,
 
+    detail: model.detail,
+  
+    create: model.create,
 
+    store: model.store,
 
+    edit: model.edit,
 
+    update: model.update,
 
+    destroy: model.destroy
     /*
     productDetail: (req, res) => {
         res.render('productDetail');
-    },
-    productCart: (req, res) => {
-        res.render('productCart');
-    },**/
-
+    },*/
+    
+   
 };
 
 module.exports = controller;

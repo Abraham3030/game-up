@@ -1,46 +1,86 @@
 /**
- * CAPA DE BASE DE DATOS
- * id: number
- * name: string
- * precio: number
- * descuento: number
- * poster: string
- * plataforma: string
+ * {
+    "id": number,
+    "name": "string",
+    "price": number,
+    "discount": number,
+    "category": "string",
+    "description": "string",
+    "image": "file"
+  },
  */
 
 const fs = require('fs');
-//const productos = require('../database/productos.json');
 const path = require('path');
-const productosModel = {
-    create: function(productoInfo){
-        if(!Object.keys(productoInfo).length) throw new Error('Invalid product');
-        this._save(productoInfo)
-        return productoInfo
+
+const productsFilePath = path.join(__dirname, "../database/productsDataBase.json");
+const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+
+const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+const model = {
+    products: (req, res) => {
+        res.render("products", { products });
     },
-    list: function(filters) {
-        if(!filters) return productos
-    },
-    findById: function(productoId) {
-        return productos.find(prod => prod.id === parseInt(productoId))
-    },
-    update: function(productoInfo, productId){
-        let productoToUpdate = this.findById(productId)
-        productoToUpdate = Object.assign({},productoToUpdate, productoInfo )
-        this._save(productoToUpdate,productId)
-    },
-    _save: function (productInfo, productoId) {
-        if(productoId) {
-            const productoIndex = productos.findIndex(producto => producto.id == productoId)
-            productos[productoIndex] = productInfo
+    detail: (req, res) => {
+        let productId = req.params.id;
+        console.log(productId);
+        const product = products.find((producto) => {
+          return producto.id == productId;
+        });
+        console.log(product);
+        if (product) {
+          res.render("productDetail", { product });
         } else {
-            productInfo.id = productos.length + 1;
-            productos.push(productInfo)
+          res.render("error");
         }
-        fs.writeFileSync(
-            path.resolve(__dirname, '../database/productos.json'),
-            JSON.stringify(productos))
     },
+    create: (req, res) => {
+        res.render('product-create-form');
+    },
+    store: (req, res) => {
+        const productInfo = req.body;
+        products.push({
+          ...productInfo,
+          id: products.length + 1,
+          image: "new-product.jpg",
+        });
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+        res.redirect("/products");
+    },
+    edit: (req, res) => {
+        const productToEdit = products.find((product) => {
+          return product.id == req.params.id;      
+        });
+        
+        if (productToEdit) {
+          res.render("product-edit-form", { productToEdit });
+        } else {
+          res.render("error");
+        }
+    },
+    update: (req, res) => {
+        const productInfo = req.body;
+        const productIdex = products.findIndex(producto =>{
+          return producto.id == req.params.id;
+        });
+    
+        products[productIdex]={...products[productIdex], ...productInfo};
+    
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+        res.redirect("/");
+    },
+    destroy: (req, res) => {
+    
+        const productIdex = products.findIndex(producto =>{
+          return producto.id == req.params.id;
+        });
+    
+        products.splice(productIdex, 1);
+        
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+        res.redirect("/products");
+    }
+};
 
-}
-
-module.exports = productosModel;
+module.exports = model;

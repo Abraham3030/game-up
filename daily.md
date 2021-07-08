@@ -1,11 +1,60 @@
-# *__La reunión daily o weekly__*
+Para este sprint 4 se dividiran las consignas de la siguiente manera:
+===============================
 
-Al comienzo de cada sprint se reparte el material para ir avanzando y no realizar misma actividad.
+----------------
+Consigna 1 
+===============================
+Definir los campos necesarios para los productos y generar archivos JSON: Cesar Antonio Villa Flores
+----------------
+- Identificador :id: 
+- Nombre del producto: name
+- Descripcion: description
+- Imagen: image
+- Categoria: category
+- Colores (o cualquier otro similar como: talla): colors
+En esta caso sera Plataforma: PlayStation, Nintendo Switch
+- Precio: price
 
-## *Descripción*
+----------------
 
-Cada integrante va avanzando segun su disponibilidad de tiempo, y si existe algun inconveniente existe apoyo mutuo con las actividad a realizar.
+----------------
+Consigna 2 
+===============================
+Definir los campos necesarios para los usuarios y generar archivos JSON: José Abraham Montelongo Campos
+----------------
+- Identificador: id
+- Nombre: fistName
+- Apellido: lastName
+- Contraseña: password
+- Categortia: category
+- Imagen: image
 
-La comunicación esta enfocada al avance obtenido por actividad realizada, cada integrante informa al otro de cuando realiza un cambio en el repositorio de Github.
+----------------
 
-La comunicación entre los integrantes es clave fundamental para obtener excelentes resultados.
+----------------
+Consigna 3 CRUD de productos (Crear, Leer, Actualizar y Borrar) 
+===============================
+Implementar los métodos necesarios para poder trabajar con la fuente de datos JSON: José Abraham Montelongo Campos de productos que crearon en los productos anteriores.
+----------------
+1. /products (GET)
+Listado de productos
+
+2. /productos/create (GET)
+Formulario de creación de productos
+
+3. /products/:id (GET)
+Detalle de un producto particular
+
+4. /products (POST)
+Acción de creacion (a donde se envía el formulario)
+
+5. /products/:id/edit (GET)
+Formulario de edición de productos
+
+6. /products/:id (PUT)
+Acción de edición (a donde se envia el formulario):
+
+7. /products/:id (DELETE)
+Accionde borrado
+
+----------------

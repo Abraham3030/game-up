@@ -10,6 +10,15 @@
   },
   {
     "id": 2,
+    "name": "Hollow Knight PS4",
+    "price": 759,
+    "discount": 0,
+    "category": "playstation",
+    "description": "Mapa manual y plegable de Hallownest, 4 paquetes de DLC: sueños ocultos, troupe de Grimm, sangre de vida y maestro de Dios.",
+    "image": "hollow-knight.jpg"
+  },
+  {
+    "id": 3,
     "name": "God Of War PS4",
     "price": 1659.99,
     "discount": 10,
@@ -18,7 +27,7 @@
     "image": "gow-ps4-1.jpg"
   },
   {
-    "id": 3,
+    "id": 4,
     "name": "Horizon Zero Dawn",
     "price": 1659.99,
     "discount": 10,
@@ -27,25 +36,25 @@
     "image": "hzd-ps4-1.jpg"
   },
   {
-    "id": 4,
-    "name": "Smash Brothers Ultimate",
-    "price": 1658,
-    "discount": 20,
-    "category": "switch",
-    "description": "Juego Smash Brothers Ultimate",
-    "image": "smash-sw-1.jpg"
-  },
-  {
     "id": 5,
-    "name": "Zelda Breath of The Wild",
-    "price": 1399,
-    "discount": 20,
-    "category": "switch",
-    "description": "Juego Zelda Breath of The Wild",
-    "image": "botw-sw-1.jpg"
+    "name": "God Fall Legion PS5",
+    "price": 2299,
+    "discount": 52,
+    "category": "playstation",
+    "description": "Aperion is on the precipice of ruin. You are the last of the valorian Knights, god-like warriors able to equip valorplates.",
+    "image": "god-fall.jpg"
   },
   {
     "id": 6,
+    "name": "Watch Dogs PS5",
+    "price": 749,
+    "discount": 0,
+    "category": "playstation",
+    "description": "Aperion is on the precipice of ruin. You are the last of the valorian Knights, god-like warriors able to equip valorplates.",
+    "image": "watch-dogs.webp"
+  },
+  {
+    "id": 7,
     "name": "Smash Brothers Ultimate",
     "price": 1658,
     "discount": 20,
@@ -54,13 +63,31 @@
     "image": "smash-sw-1.jpg"
   },
   {
-    "id": 7,
+    "id": 8,
     "name": "Zelda Breath of The Wild",
     "price": 1399,
     "discount": 20,
     "category": "switch",
     "description": "Juego Zelda Breath of The Wild",
     "image": "botw-sw-1.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Mario + Rabbids Kingdom Battle",
+    "price": "620.00",
+    "discount": "0",
+    "category": "switch",
+    "description": "Con este juego de Mario vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
+    "image": "mario-rabbids.webp"
+  },
+  {
+    "id": 10,
+    "name": "Street Fighter 30th Anniversary",
+    "price": "609.00",
+    "discount": "0",
+    "category": "switch",
+    "description": "Durante años Street Fighter ha sido uno de los mejores videojuegos dentro del género de pelea. Vas a poder batallar con diversos personajes, entre ellos las clásicas figuras de Ryu y Ken, que serán tus aliados mientras te diviertes jugando. Interactúa con otros jugadoresPodrás disfrutar de una experiencia inigualable, ya que te permite jugar con tus amistades y compartir momentos inolvidables.",
+    "image": "street-fighter.webp"
   },
   {
     "name": "Resident Evil",
@@ -68,7 +95,7 @@
     "discount": "10",
     "category": "playstation",
     "description": "kwekwe",
-    "id": 8,
+    "id": 11,
     "image": "new-product.jpg"
   },
   {
@@ -77,7 +104,7 @@
     "discount": "15",
     "category": "playstation",
     "description": "prueba edicion y despues eliminar",
-    "id": 9,
+    "id": 12,
     "image": "new-product.jpg"
   }
 ]

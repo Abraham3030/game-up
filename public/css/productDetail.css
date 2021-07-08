@@ -180,6 +180,7 @@ img{
 
 
 .imagen-principal{
+    width: 70%;
     display: flex;
     justify-content: center;
 }
@@ -188,21 +189,27 @@ img{
 }
 
 #titulo-juego{
-
-    
     font-size: 24px;
     font-weight: bold;
 }
 
 .precio{
-    
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
     font-size: 24px;
     font-weight: bold;
-    color: red;
+}
+#discount{
+    color: #00db82;
+}
+
+.final-price{
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .btn{
-
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -221,7 +228,30 @@ img{
 
 }
 .btn-productCart {
-    width: 75%;
+    width: 100%;
+    background-color: cornflowerblue;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    border-radius: 4px;
+    font-size: 24px;
+    font-family: 'Signika Negative', sans-serif;
+}
+.btn-productCart:hover {
+    background-color: #00db82;
+}
+.btn-productCart-edit {
+    width: 100%;
+    background-color: cornflowerblue;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    border-radius: 4px;
+    font-size: 24px;
+    font-family: 'Signika Negative', sans-serif;
+}
+.btn-productCart-delete {
+    width: 100%;
     background-color: cornflowerblue;
     color: white;
     font-weight: bold;
@@ -231,11 +261,13 @@ img{
     font-family: 'Signika Negative', sans-serif;
 }
 
-.btn-productCart:hover {
-    background-color: #00db82;
+.btn-productCart-edit:hover {
+    background-color: chocolate;
+}
+.btn-productCart-delete:hover {
+    background-color: red;
 }
 .btn select{
-    
     background-color: white;
     outline: 0;
     border-radius: 4px;
@@ -244,32 +276,21 @@ img{
 .btn select:hover {
     border: #00db82 solid 2px;
 }
-
-
-
 .descripcion-envio{
     margin-top: 5%;
     border: solid 0.5px grey;
-}
-.action-button {
-    border: none;
     border-radius: 8px;
-    font-size: 1.2em;
-    color: #ffffff;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 30px;
-    margin-top: 15px;
-    
 }
-.action-button.edit {
-    background-color: chocolate;
-  }
-  .action-button.delete {
-    background-color: rgb(248, 69, 37);
-    
-  }
+.content-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn-size{
+    width: 50%;
+    margin: 10px;
+}
+
 
 .descripcion{
     

@@ -39,7 +39,12 @@ router.put('/products/:id', productsController.update);
 router.delete('/products/:id', productsController.destroy);
 // Fin eliminar un producto
 
-//router.get('/productCart',productsController.productCart);
+
+// Otros
+//router.get('/products/:id', productsController.search);
+router.get('/productCart',productsController.productCart);
 //router.post('/productCart',productosController.productCart);
+router.get('/playstation', productsController.playstation);
+router.get('/nintendo-switch', productsController.nintendoswitch);
 
 module.exports = router;
