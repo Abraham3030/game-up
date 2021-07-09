@@ -68,7 +68,7 @@ const model = {
         products[productIdex]={...products[productIdex], ...productInfo};
     
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-        res.redirect("/");
+        res.redirect("/products");
     },
     destroy: (req, res) => {
     

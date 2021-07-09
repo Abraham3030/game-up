@@ -18,19 +18,12 @@ const controller = {
 		res.render('index', {playstation, nintendoswitch});
     },
     search: (req, res) => {
-      let productName = req.params.name;
-        console.log(productName);
-        const product = products.find((producto) => {
-          return producto.name == productName;
+      const {keywords} = req.query;
+      const resultados = products.filter(({description, name})=>{
+        return description.includes(keywords) || name.includes(keywords);
         });
-        console.log(product);
-        if (product) {
-          res.render("productDetail", { product });
-        } else {
-          res.render("error");
-        }
+      res.render('results', {resultados, keywords});
     },
-
     playstation: (req, res) => {
       const playstation = products.filter((product)=>{
         return product.category === 'playstation';

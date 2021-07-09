@@ -41,7 +41,7 @@ router.delete('/products/:id', productsController.destroy);
 
 
 // Otros
-//router.get('/products/:id', productsController.search);
+router.get('/search', productsController.search);
 router.get('/productCart',productsController.productCart);
 //router.post('/productCart',productosController.productCart);
 router.get('/playstation', productsController.playstation);

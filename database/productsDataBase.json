@@ -20,8 +20,8 @@
   {
     "id": 3,
     "name": "God Of War PS4",
-    "price": 1659.99,
-    "discount": 10,
+    "price": "1659.99",
+    "discount": "10",
     "category": "playstation",
     "description": "Juego God Of War PS4",
     "image": "gow-ps4-1.jpg"
@@ -47,8 +47,8 @@
   {
     "id": 6,
     "name": "Watch Dogs PS5",
-    "price": 749,
-    "discount": 0,
+    "price": "749",
+    "discount": "5",
     "category": "playstation",
     "description": "Aperion is on the precipice of ruin. You are the last of the valorian Knights, god-like warriors able to equip valorplates.",
     "image": "watch-dogs.webp"
@@ -105,6 +105,15 @@
     "category": "playstation",
     "description": "prueba edicion y despues eliminar",
     "id": 12,
+    "image": "new-product.jpg"
+  },
+  {
+    "name": "nueva prueba",
+    "price": "15000",
+    "discount": "10",
+    "category": "",
+    "description": "nueva prueba",
+    "id": 13,
     "image": "new-product.jpg"
   }
 ]

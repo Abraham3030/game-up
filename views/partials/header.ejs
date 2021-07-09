@@ -4,29 +4,26 @@
             <label for="show-hamburguer">
                 <i class="fas fa-bars"></i>
             </label>
-
             <div>
                 <input type="checkbox" id="show-hamburguer" hidden>
                 <ul class="navbar-hamburguer">
                   <li class="li-hover "><a href="/login">Iniciar sesion</a></li>
                   <li class="li-hover "><a href="/register">Crear cuenta</a></li>
+                  <li class="li-hover "><a href="/products/create">Crear producto</a></li>
                   <li class="li-hover consolas"><a href="/playstation">PlayStation</a></li>
                   <li class="li-hover consolas"><a href="/nintendo-switch">Switch</a></li>
-                
                 </ul>
             </div>
         </div>
     </div>
-
-
     </form>
     <div id="logo-header">
         <a href="/"><img id="logo" src="/images/logoGameUp.png"/></a>
     </div>
     <div id="search">
-        <form action="" id="form-search">
-            <input id="buscador" type="text" placeholder="Buscar productos"/>
-            <button id="boton-search"><i class="fas fa-search"></i></button>
+        <form action="/search" method="GET" id="form-search">
+            <input id="buscador" type="text" name="keywords" placeholder="Buscar productos"/>
+            <button id="boton-search" type="submit"><i class="fas fa-search"></i></button>
         </form>                               
     </div>
     <form id="login">
