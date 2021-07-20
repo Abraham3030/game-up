@@ -66,6 +66,34 @@ header {
 .fa-shopping-cart, .fa-user, .fa-search, .fa-bars {
     color: white;
 }
+.navbar-hamburguer{
+    background-color: #FFF;
+    position: absolute;
+    left: 0;
+    top: 56px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+.navbar-hamburguer a{
+    list-style: none;
+    text-decoration: none;
+    color: #00db82;
+}
+.navbar-hamburguer a:hover{
+    color: white;
+}
+.li-hover:hover{
+    background-color: #00db82;
+}
+
+input[type="checkbox"]:checked + .navbar-hamburguer{
+    display: block;
+}
 /*Fin Nuevo Header*/
 
 p,h1,h2,h3,h4,a,input,button {
@@ -175,6 +203,22 @@ p,h1,h2,h3,h4,a,input,button {
     text-align: center;
 }
 
+@media (min-width: 576px) {
+    /*Nuevo header*/
+    #hamburguer {
+        width: 15%;
+    }
+    #logo-header {
+        width: 20%;
+    }
+    #search {
+        width: 50%;
+    }
+    #login {
+        width: 15%;
+    }
+}
+
 @media (min-width: 768px) {
     /*Nuevo header*/
     #hamburguer {
@@ -253,4 +297,52 @@ p,h1,h2,h3,h4,a,input,button {
 
     /*fin footer*/
 
+}
+
+@media (min-width: 992px) {
+    /*Nuevo header*/
+    #hamburguer {
+        width: 8%;
+    }
+    #logo-header {
+        
+        width: 8%;
+    }
+    #search {
+        
+        width: 68%;
+    }
+    #buscador {
+        width: 90%;
+    }
+    #boton-search {
+        width: 10%;
+        
+    }
+    #login {
+        width: 16%;
+    }
+}
+
+@media (min-width: 1200px) {
+    /*Nuevo header*/
+    #hamburguer {
+        width: 5%;
+    }
+    #logo-header {
+        width: 10%;
+    }
+    #search {
+        width: 75%;
+    }
+    #buscador {
+        width: 94%;
+    }
+    #boton-search {
+        width: 6%;
+        
+    }
+    #login {
+        width: 10%;
+    }
 }

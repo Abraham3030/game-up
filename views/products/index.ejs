@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <!--HEader-->
+    <%- include('../partials/header');%>
+    <!--navbar-desk-->
+    <%- include('../partials/navbar-desk.ejs');%>
+    <!--Banner-->
+    <%- include('../partials/banner.ejs');%>    
+    <!--Nuevo contenido main imagenes-->
+    <main>
+        <div class="contendor-main">
+            <%- include('../partials/playstation-product.ejs');%>
+            <%- include('../partials/nintendoswitch-product.ejs');%>   
+        </div>
+    </main>
+    <!-- Fin Nuevo contenido main imagenes-->
+    <footer >
+        <%- include('../partials/footer') %> 
+    </footer>
+</body>
+</html>
