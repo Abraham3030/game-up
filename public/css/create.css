@@ -72,7 +72,7 @@ input[type=text], input[type=password] {
     font-family: 'Signika Negative', sans-serif;
 }
 
-select, textarea {
+select, textarea{
     width: 100%;
     height: auto;
     padding: 12px 20px;
@@ -85,8 +85,120 @@ select, textarea {
 .form-input {
     border-radius: 5px;
     outline: none;
+}
+
+.content-password, .imagen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+#password{
+    border: 0;
+    border-radius: 5px;
+    padding: 12px 20px;
+    margin: 0;
+}
+
+#check{
+    border: solid red 1px;
     
 }
+/*input file*/
+.file-select {          
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.file-select::before {
+    background-color: white;
+    color: black;
+    display: flex;            
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    content: 'Subir archivo'; /* testo por defecto */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;                
+}
+.file-select input[type="file"] {
+    opacity: 0;
+    width: 100%;
+    display: inline-block;    
+}
+.file-select input[type="file"]:hover{
+    cursor: pointer;
+    background: grey;
+    color: #fff; 
+}
+
+
+/**/
+
+/*Nuevo intento de file*/
+.invoiceBox > input {
+    display: none;
+  }
+  .invoiceBox label {
+      display: block;
+  }
+  .boxFile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    font-family: 'Signika Negative', sans-serif;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .boxFile:hover {
+      cursor: pointer;
+      background: grey;
+      color: #fff;
+  }
+  .boxFile i {
+      display: block;
+      font-size: 26px;
+      margin-bottom: 5px;
+  }
+  .attached,
+  .attached:hover,
+  .attached:focus {
+      background: #00db82;
+      color: #fff;
+      border: 1px solid #ccc;
+  }
+/*Fin nuevo intento*/
+
+img {
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+}
+
+
 .btn-container{
     display: flex;
     justify-content: center;

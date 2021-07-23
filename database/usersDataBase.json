@@ -1,38 +1,20 @@
 [
-    {
-        "id": 1,
-        "first-name": "Abraham",
-        "last-name": "Montelongo Campos",
-        "email": "algo@hotmail.com",
-        "password": "algo1234",
-        "category": "user",
-        "image": "user-default.jpg"
-    },
-    {
-        "id": 2,
-        "first-name": "Antonio Cesar",
-        "last-name": "Villa Flores",
-        "email": "algo2@hotmail.com",
-        "password": "algo1234",
-        "category": "admin",
-        "image": "user-default.jpg"
-    },
-    {
-        "id": 3,
-        "first-name": "Alfonso",
-        "last-name": "Banda",
-        "email": "algo3@hotmail.com",
-        "password": "algo1234",
-        "category": "admin",
-        "image": "user-default.jpg"
-    },
-    {
-        "id": 4,
-        "first-name": "Francisco",
-        "last-name": "DH",
-        "email": "algo4@hotmail.com",
-        "password": "algo1234",
-        "category": "user",
-        "image": "user-default.jpg"
-    }
+  {
+    "id": 1,
+    "first_name": "Abraham",
+    "last_name": "Montelongo",
+    "email": "abraham@DH.com",
+    "password": "$2a$10$AjO827D2eMGb1ZpkhZ529u2S.IE05eJ8Tx3hXrJdxeIdcm6UbMdX6",
+    "category": "user",
+    "avatar": "1627059914027_img.jpg"
+  },
+  {
+    "id": 2,
+    "first_name": "Cesar",
+    "last_name": "Villa",
+    "email": "cesar@DH.com",
+    "password": "$2a$10$L39e5Xu2CHcjGdAlOLwz6.8RMIIRFCDdspcgUlK72UR.sFmYBUiIS",
+    "category": "guest",
+    "avatar": "1627060004839_img.jpg"
+  }
 ]

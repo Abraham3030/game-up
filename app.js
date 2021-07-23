@@ -12,7 +12,7 @@ app.use( express.static( publicPath ));
 
 //Configuracion de EJS
 app.set('view engine', 'ejs');
-app.set('views', ['./views/products/',
+app.set('views', ['./views/index/', './views/products/',
                   './views/users/']);
 
 //configuracion para poder usar post
@@ -22,6 +22,7 @@ app.use(express.json());
 
 //Despues las ruttas
 //Utilizacion de MVC
+//app.use('/', rutasIndex);
 app.use('/', rutasProductos);
 app.use('/', rutasUsuarios);
 

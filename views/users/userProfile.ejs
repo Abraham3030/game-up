@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/users.css">
+</head>
+<body>    
+    <div>
+        <h1>Usuarios</h1>
+    </div>
+    <main>
+        <div class="container">
+                    <article class="card">
+                            <div class="card-left">
+                                <figure><img  src="/images/users/<%=user.avatar%>" alt="imagen de usuario"></figure>
+                                <h3>#<%=user.id%></h3>
+                            </div>
+                            <div class="card-content">                           
+                                <p>Nombre: <%=user.first_name%></p>
+			    				<p>Apellido: <%=user.last_name%></p>
+                                <p>Email: <%=user.email%></p>
+			    				<p>Categoria: <%=user.category%></p>
+                            </div>
+                    </article>
+                    <div class="content-button">
+                        <form class="btn-size" action="/users/<%=user.id%>/edit">
+                            <button class="btn-productCart-edit">EDITAR</button>
+                        </form>
+                        <form class="btn-size" action="/users/<%=user.id%>?_method=DELETE" method="POST">
+                            <button class="btn-productCart-delete" type="submit" >ELIMINAR</button>
+                        </form>
+                    </div>
+        </div>
+    </main>    
+</body>
+</html>

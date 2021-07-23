@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/users.css">
+</head>
+<body>    
+    <div>
+        <h1>Busqueda de Usuarios</h1>
+        <h2>Resultados de la búsqueda: <%=keywords %></h2> 
+    </div>
+    <main>
+        <div class="container">
+            <% for(let i = 0; i < resultadosUsuario.length; i ++) { %>
+                    <article class="card">
+                            <div class="card-left">
+                                <figure><img  src="/images/users/<%=resultadosUsuario[i].avatar%>" alt="imagen de usuario"></figure>
+                                <h3>#<%=resultadosUsuario[i].id%></h3>
+                            </div>
+                            <div class="card-content">                           
+                                <h2><%=resultadosUsuario[i].first_name%> <%=resultadosUsuario[i].last_name%></h2>
+                                <h2><%=resultadosUsuario[i].email%></h2>
+                                <form class="btn-size" action="/users/<%=resultadosUsuario[i].id%>">
+                                    <button class="btn-productCart">Ver detalle</button>
+                                </form>
+                            </div>
+                    </article>
+            <% } %>
+            <% if(!resultadosUsuario.length) { %>
+            <div>
+                <h2  style="color: tomato;">No hay usuarios que coincidan con esa búsqueda</h2>
+            </div>
+            <% } %>
+            <div>
+                <form class="btn-size" action="/users/list">
+                    <button class="btn-productCart">Regresar a lista de usuarios</button>
+                </form>                
+            </div>
+        </div>
+    </main>    
+</body>
+</html>

@@ -41,8 +41,8 @@ const model = {
     store: (req, res) => {
         const productInfo = req.body;
         products.push({
-          ...productInfo,
           id: products.length + 1,
+          ...productInfo,
           image: "new-product.jpg",
         });
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));

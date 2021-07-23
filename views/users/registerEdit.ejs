@@ -20,30 +20,47 @@
     
             <div class="tab-items">
                 <div class="marco">
-                    <a href="/login"><p>Iniciar Sesion</p></a>
-                </div>
-                <div class="marco">
-                    <p>Crear Cuenta</p>
+                    <p>Editar Cuenta</p>
                 </div>
             </div>
-            <form action="/users/register" method="POST" enctype="multipart/form-data">
+            <!-- Con el enctype no puedo actualizar la informacion con el metodo PUT,
+            pero si se lo quito el enctype se borra la imagen y no la pudo cargar de nuevo.-->
+            <form action="/<%= userToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <label for="first_name">Nombre</label>
 			    <input  type="text" 
                         id="first_name" 
                         name="first_name" 
                         placeholder="Ejemplo: Evelyn" 
-                        class="form-input" 
+                        class="form-input"
+                        value="<%= userToEdit.first_name %>"
                         >
 
                 <label for="last_name">Apellido</label>
-				<input type="text" id="last_name" name="last_name" placeholder="Ejemplo: Valdez Castro" class="form-input">
+				<input  type="text" 
+                        id="last_name" 
+                        name="last_name" 
+                        placeholder="Ejemplo: Valdez Castro" 
+                        class="form-input"
+                        value="<%= userToEdit.last_name %>"
+                        >
 
                 <label for="email" class="form-label">Email</label>
-				<input type="text" id="email" name="email" placeholder="Ej: evely@mail.com" class="form-input">
+				<input  type="text" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Ej: evely@mail.com" 
+                        class="form-input"
+                        value="<%= userToEdit.email%>"
+                        >
 
                 <label>Contraseña</label>
                 <div class="content-password">
-                    <input type="password" name="password" id="password" placeholder="Contraseña">
+                    <input  type="password" 
+                            name="password" 
+                            id="password" 
+                            placeholder="Contraseña"
+                            value="<%= userToEdit.password %>"
+                            >
                     <input id="check" type="checkbox" onclick="mostrarContrasena()">
                     <span style="font-size: 10px; padding-left: 5px;">Mostrar</span>
                 </div>
@@ -51,24 +68,32 @@
                 <label for="category" class="form-label">Categoría:</label>
 				<select name="category" id="category" class="form-input">
 					<option value="">Elegir opción</option>
-                    <option value="user">Usuario</option>
-                    <option value="guest">Invitado</option>
+                    <option value="user" selected="<%= userToEdit.category === 'user' ? 'selected' : '' %>">Usuario</option>
+                    <option value="guest" selected="<%= userToEdit.category === 'guest' ? 'selected' : '' %>">Invitado</option>
 				</select>
 
                 
 
                 <div class="invoiceBox">
                     <label for="">Foto de perfil</label>
+                    <div class="imagen">
+                        <figure><img  src="/images/users/<%=userToEdit.avatar%>" alt="imagen de usuario"></figure>
+                    </div>
                     <label for="file">
                       <div class="boxFile" >
-                        Seleccionar archivo
+                        Cambiar foto
                       </div>
                     </label>
-                    <input id="file" name="avatar" size="6000" type="file" >
+                    <input  id="file" 
+                            name="avatar" 
+                            size="6000" 
+                            type="file" 
+                            value="<%= userToEdit.avatar %>"
+                            >
                   </div>
 
                 <div class="btn-container">
-                    <button class="btn-login" type="submit">CREAR CUENTA</button>
+                    <button class="btn-login" type="submit">GUARDAR CAMBIOS</button>
                 </div>
             </form>
     

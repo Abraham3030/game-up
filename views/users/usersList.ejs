@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %> 
+    <link rel="stylesheet" href="/css/users.css">
+</head>
+<body>    
+    <header>
+        <form id="hamburguer" name="hamburguer" name="">
+            <div class="contenedor-login-fas" id="bars">
+                <label for="show-hamburguer">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <div>
+                    <input type="checkbox" id="show-hamburguer" hidden>
+                    <ul class="navbar-hamburguer">
+                      <li class="li-hover "><a href="/login">Iniciar sesion</a></li>
+                      <li class="li-hover "><a href="/users/register">Crear cuenta</a></li>                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </form>
+        <div id="logo-header">
+            <a href="/"><img id="logo" src="/images/logoGameUp.png"/></a>
+        </div>
+        <div id="search">
+            <form action="/users-Search" method="GET" id="form-search">
+                <input id="buscador" type="text" name="keywords" placeholder="Buscar usuario"/>
+                <button id="boton-search" type="submit"><i class="fas fa-search"></i></button>
+            </form>                               
+        </div>
+        <form id="login">
+            <div class="contenedor-login-fas" id="user">
+                <a href="/login"><i class="far fa-user"></i></a>
+            </div>
+        </form>
+    </header>
+    
+    <main>
+        <div class="container">
+                <% for(let i = 0; i < users.length; i ++) { %>
+                    <article class="card">
+                            <div class="card-left">
+                                <figure><img  src="/images/users/<%=users[i].avatar%>" alt="imagen de usuario"></figure>
+                                <h3>#<%=users[i].id%></h3>
+                            </div>
+                            <div class="card-content">                           
+                                <h2><%=users[i].first_name%> <%=users[i].last_name%></h2>
+                                <h2><%=users[i].email%></h2>
+                                <form class="btn-size" action="/users/<%=users[i].id%>">
+                                    <button class="btn-productCart">Ver detalle</button>
+                                </form>
+                            </div>
+                    </article>
+                <% } %>
+        </div>
+    </main>    
+</body>
+</html>

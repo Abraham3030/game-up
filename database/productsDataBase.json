@@ -2,9 +2,9 @@
   {
     "id": 1,
     "name": "Final Fantasy VII",
-    "price": 1299.99,
-    "discount": 20,
-    "category": "playstation",
+    "price": "1399.99",
+    "discount": "20",
+    "category": "switch",
     "description": "Juego Final Fantasy VII",
     "image": "ff7-remake-ps4-1.jpg"
   },
@@ -114,6 +114,15 @@
     "category": "",
     "description": "nueva prueba",
     "id": 13,
+    "image": "new-product.jpg"
+  },
+  {
+    "id": 14,
+    "name": "aaa",
+    "price": "aaa",
+    "discount": "15",
+    "category": "switch",
+    "description": "aasdasdas",
     "image": "new-product.jpg"
   }
 ]

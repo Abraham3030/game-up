@@ -41,6 +41,7 @@ router.delete('/products/:id', productsController.destroy);
 
 
 // Otros
+// Buscar producto
 router.get('/search', productsController.search);
 router.get('/productCart',productsController.productCart);
 //router.post('/productCart',productosController.productCart);
