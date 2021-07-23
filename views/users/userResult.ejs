@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <link rel="stylesheet" href="/css/users.css">
+    <%- include('../partials/head') %> 
+    <link rel="stylesheet" href="/css/usersList.css">
 </head>
-<body>    
+<body>
+    <%- include('../partials/headerUser.ejs') %>    
     <div>
         <h1>Busqueda de Usuarios</h1>
         <h2>Resultados de la búsqueda: <%=keywords %></h2> 
@@ -30,11 +32,6 @@
                 <h2  style="color: tomato;">No hay usuarios que coincidan con esa búsqueda</h2>
             </div>
             <% } %>
-            <div>
-                <form class="btn-size" action="/users/list">
-                    <button class="btn-productCart">Regresar a lista de usuarios</button>
-                </form>                
-            </div>
         </div>
     </main>    
 </body>

@@ -9,19 +9,7 @@ const controlador = {
   register: (req, res) => {
     res.render('register');
   },
-  login: (req, res) => {
-    res.render('login');
-  },
-  // Busqueda de usuario
-  search: (req, res) => {
-    const {keywords} = req.query;
-    const resultadosUsuario = users.filter(({email, last_name, first_name})=>{
-      return email.includes(keywords) || last_name.includes(keywords) || first_name.includes(keywords);
-      });
-    res.render('userResult', {resultadosUsuario, keywords});
-  },
   
-
   // users.model.js
   profile: model.profile,
   

@@ -7,13 +7,9 @@
             <div>
                 <input type="checkbox" id="show-hamburguer" hidden>
                 <ul class="navbar-hamburguer">
-                  <li class="li-hover "><a href="/users/login">Iniciar sesion</a></li>
-                  <li class="li-hover "><a href="/users/register">Crear cuenta</a></li>
-                  <li class="li-hover "><a href="/users/list">Lista de usuarios</a></li>
-                  <li class="li-hover "><a href="/products/create">Crear producto</a></li>
-                  <li class="li-hover consolas"><a href="/playstation">PlayStation</a></li>
-                  <li class="li-hover consolas"><a href="/nintendo-switch">Switch</a></li>
-                </ul>
+                    <li class="li-hover "><a href="/users/login">Iniciar sesion</a></li>
+                    <li class="li-hover "><a href="/users/register">Crear cuenta</a></li>                
+                  </ul>
             </div>
         </div>
     </div>
@@ -22,8 +18,8 @@
         <a href="/"><img id="logo" src="/images/logoGameUp.png"/></a>
     </div>
     <div id="search">
-        <form action="/search" method="GET" id="form-search">
-            <input id="buscador" type="text" name="keywords" placeholder="Buscar productos"/>
+        <form action="/users/search" method="GET" id="form-search">
+            <input id="buscador" type="text" name="keywords" placeholder="Buscar usuario"/>
             <button id="boton-search" type="submit"><i class="fas fa-search"></i></button>
         </form>                               
     </div>
@@ -32,7 +28,7 @@
             <a href="/users/login"><i class="far fa-user"></i></a>
         </div>
         <div class="contenedor-login-fas" id="cart">
-            <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
+            <a href="/users/list"><i class="fas fa-users"></i></a>
         </div>
     </form>
 </header>

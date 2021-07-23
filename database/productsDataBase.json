@@ -124,5 +124,14 @@
     "category": "switch",
     "description": "aasdasdas",
     "image": "new-product.jpg"
+  },
+  {
+    "id": 15,
+    "name": "aaaaaaaaa",
+    "price": "1000",
+    "discount": "1",
+    "category": "playstation",
+    "description": "adasdasasdda",
+    "image": "new-product.jpg"
   }
 ]

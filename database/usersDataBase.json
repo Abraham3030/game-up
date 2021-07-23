@@ -16,5 +16,14 @@
     "password": "$2a$10$L39e5Xu2CHcjGdAlOLwz6.8RMIIRFCDdspcgUlK72UR.sFmYBUiIS",
     "category": "guest",
     "avatar": "1627060004839_img.jpg"
+  },
+  {
+    "id": 3,
+    "first_name": "Daniela",
+    "last_name": "Colin",
+    "email": "dany@DH.com",
+    "password": "$2a$10$SjkuVj8XjeF.h8SVM4.H8uLjzQJBdMyNdQQi9dHczqpIQ.bwieAgC",
+    "category": "user",
+    "avatar": "1627071934044_img.jpg"
   }
 ]
