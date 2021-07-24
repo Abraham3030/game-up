@@ -5,7 +5,7 @@
     "last_name": "Montelongo",
     "email": "abraham@DH.com",
     "password": "$2a$10$AjO827D2eMGb1ZpkhZ529u2S.IE05eJ8Tx3hXrJdxeIdcm6UbMdX6",
-    "category": "user",
+    "category": "usuario",
     "avatar": "1627059914027_img.jpg"
   },
   {
@@ -14,7 +14,7 @@
     "last_name": "Villa",
     "email": "cesar@DH.com",
     "password": "$2a$10$L39e5Xu2CHcjGdAlOLwz6.8RMIIRFCDdspcgUlK72UR.sFmYBUiIS",
-    "category": "guest",
+    "category": "invitado",
     "avatar": "1627060004839_img.jpg"
   },
   {
@@ -23,7 +23,7 @@
     "last_name": "Colin",
     "email": "dany@DH.com",
     "password": "$2a$10$SjkuVj8XjeF.h8SVM4.H8uLjzQJBdMyNdQQi9dHczqpIQ.bwieAgC",
-    "category": "user",
+    "category": "usuario",
     "avatar": "1627071934044_img.jpg"
   }
 ]

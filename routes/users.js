@@ -19,7 +19,7 @@ router.get('/list', usersController.list);
 // Crear Usuario/ Obtener información con fromulario
 router.get('/register', usersController.create);
 // 4.Procesar formulario de usuarios
-router.post('/register', uploadFile.single('avatar'), usersController.store);
+router.post('/register', uploadFile.single('avatar'), validations, usersController.store);
 
 // 3. Detalle de un producto particular
 // Obtener un Usuario/ Detalle de usuario

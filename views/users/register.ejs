@@ -14,10 +14,8 @@
             </div>                                
         </header>
 
-        
-    
         <div class="contenedor margen-login-register">
-    
+            
             <div class="tab-items">
                 <div class="marco">
                     <a href="/users/login"><p>Iniciar Sesion</p></a>
@@ -26,35 +24,79 @@
                     <p>Crear Cuenta</p>
                 </div>
             </div>
+
             <form action="/users/register" method="POST" enctype="multipart/form-data">
                 <label for="first_name">Nombre</label>
 			    <input  type="text" 
                         id="first_name" 
                         name="first_name" 
                         placeholder="Ejemplo: Evelyn" 
-                        class="form-input" 
-                        >
+                        class="form-input"
+                        value="<%= locals.oldData ? oldData.first_name : null %>">
+                <% if(locals.errors && errors.first_name) {%>
+                <div class="text-danger">
+                    <%= errors.first_name.msg %>
+                </div>
+                <% } %>
 
                 <label for="last_name">Apellido</label>
-				<input type="text" id="last_name" name="last_name" placeholder="Ejemplo: Valdez Castro" class="form-input">
+				<input  type="text" 
+                        id="last_name" 
+                        name="last_name" 
+                        placeholder="Ejemplo: Valdez Castro" 
+                        class="form-input"
+                        value="<%= locals.oldData ? oldData.last_name : null %>">
+                <% if(locals.errors && errors.last_name) {%>
+                    <div class="text-danger">
+                        <%= errors.last_name.msg %>
+                    </div>
+                <% } %>
 
                 <label for="email" class="form-label">Email</label>
-				<input type="text" id="email" name="email" placeholder="Ej: evely@mail.com" class="form-input">
+				<input  type="text" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Ej: evely@mail.com" 
+                        class="form-input"
+                        value="<%= locals.oldData ? oldData.email : null %>">
+                <% if(locals.errors && errors.email) {%>
+                    <div class="text-danger">
+                        <%= errors.email.msg %>
+                    </div>
+                <% } %>
 
                 <label>Contraseña</label>
                 <div class="content-password">
-                    <input type="password" name="password" id="password" placeholder="Contraseña">
+                    <input  type="password" 
+                            name="password" 
+                            id="password" 
+                            placeholder="Contraseña">
                     <input id="check" type="checkbox" onclick="mostrarContrasena()">
                     <span style="font-size: 10px; padding-left: 5px;">Mostrar</span>
                 </div>
+                <% if(locals.errors && errors.password) {%>
+                    <div class="text-danger">
+                        <%= errors.password.msg %>
+                    </div>
+                <% } %>
 
                 <label for="category" class="form-label">Categoría:</label>
 				<select name="category" id="category" class="form-input">
 					<option value="">Elegir opción</option>
-                    <option value="user">Usuario</option>
-                    <option value="guest">Invitado</option>
+                    <%  
+                        let options = ['usuario', 'invitado'];
+		            %>
+					<% for (const oneOptions of options) { %>
+						<option value="<%= oneOptions %>" 
+							<%= locals.oldData && (oneOptions === oldData.category) ? 'selected' : null %> 
+						> <%= oneOptions %> </option>
+					<% } %>
 				</select>
-
+                <% if(locals.errors && errors.category) {%>
+                    <div class="text-danger">
+                        <%= errors.category.msg %>
+                    </div>
+                <% } %>
                 
 
                 <div class="invoiceBox">
@@ -65,7 +107,13 @@
                       </div>
                     </label>
                     <input id="file" name="avatar" size="6000" type="file" >
-                  </div>
+                    <% if(locals.errors && errors.avatar) {%>
+                        <div class="text-danger">
+                            <%= errors.avatar.msg %>
+                        </div>
+                    <% } %>
+                </div>
+                
 
                 <div class="btn-container">
                     <button class="btn-login" type="submit">CREAR CUENTA</button>

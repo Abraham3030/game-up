@@ -16,8 +16,8 @@ app.use( express.static( publicPath ));
 app.set('view engine', 'ejs');
 app.set('views', ['./views/index/', './views/products/', './views/users/']);
                   
-//configuracion para poder usar post
-//primero debe ir esta configuracion del middleware
+// Configuracion para poder usar post
+// primero debe ir esta configuracion del middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 

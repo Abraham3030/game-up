@@ -49,6 +49,25 @@ const model = {
 				oldData: req.body
 			});
 		}
+		/**
+		 * Validacion para verificar que no este registrado el mismo correo,
+		 * solo funciona cuando mandas el formulario completo y con un email identico 
+		 * registrado en la BD, arroja una advertencia 'Este email ya está registrado'. 
+		 * Si se intenta solo verificar que el email esta duplicado no funciona.
+		 */ 
+		let userInDB = model.findByField('email', req.body.email);
+
+		if (userInDB) {
+			return res.render('register', {
+				errors: {
+					email: {
+						msg: 'Este email ya está registrado'
+					}
+				},
+				oldData: req.body
+			});
+		}
+
 
 	  	const userInfo = req.body;
 	  	users.push({
@@ -93,7 +112,24 @@ const model = {
 		  
 		fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
 		res.redirect("/users/list");
-	}
+	},
+
+
+	// Opciones para verifica que ya existe un correo
+	findByField: function (field, text) {
+		let allUsers = this.findAll();
+		let userFound = allUsers.find(oneUser => oneUser[field] === text);
+		return userFound;
+	},
+	findAll: function () {
+		return this.getData();
+	},
+	fileName: './database/usersDataBase.json',
+
+	getData: function () {
+		return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
+	},
+
 };
   
 module.exports = model;

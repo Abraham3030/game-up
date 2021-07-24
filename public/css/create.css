@@ -110,6 +110,12 @@ select, textarea{
     border: solid red 1px;
     
 }
+.text-danger{
+    color: red;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
 /*input file*/
 .file-select {          
     position: relative;
