@@ -4,6 +4,8 @@ const router = express.Router();
 
 // Configuracion controller productsController
 const productsController = require('../controllers/productsController');
+// Configuracion de autenticacion para poder crear un producto
+const authMiddleware = require('../middlewares/authMiddleware');
 
 /* CRUD de productos */
 
@@ -14,9 +16,9 @@ router.get('/', productsController.products)
 
 // 2. Formulario de creación de productos
 // Crear Productos
-router.get('/create', productsController.create); 
+router.get('/create', authMiddleware, productsController.create); 
 // 4. Accion de creación (a donde se envía el formulario) 
-router.post('/create', productsController.store);
+router.post('/create', authMiddleware, productsController.store);
 // Fin crear producto 
 
 // 3. Detalle de un producto particular
@@ -26,14 +28,14 @@ router.get('/:id', productsController.detail);
 
 // 5. Formulario de edición de productos
 // Editar un producto
-router.get('/:id/edit', productsController.edit); 
+router.get('/:id/edit', authMiddleware, productsController.edit); 
 // 6. Formulario de edición (a donde se envía el formulario)
-router.put('/:id', productsController.update); 
+router.put('/:id', authMiddleware, productsController.update); 
 // Fin editar un producto
 
 // 7 Acción de borrado
 // Eliminar un producto
-router.delete('/:id', productsController.destroy);
+router.delete('/:id', authMiddleware, productsController.destroy);
 // Fin eliminar un producto
 
 module.exports = router;

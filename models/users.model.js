@@ -41,6 +41,7 @@ const model = {
 	},
 	// Accion vista crear usuario
 	storeUser: (req, res) => {
+		// Validacion formulario register
 		const resultValidation = validationResult(req);
 
 		if (resultValidation.errors.length > 0) {
@@ -68,7 +69,7 @@ const model = {
 			});
 		}
 
-
+		// Crear usuario
 	  	const userInfo = req.body;
 	  	users.push({
 			id: users.length + 1,

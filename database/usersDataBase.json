@@ -25,5 +25,14 @@
     "password": "$2a$10$SjkuVj8XjeF.h8SVM4.H8uLjzQJBdMyNdQQi9dHczqpIQ.bwieAgC",
     "category": "usuario",
     "avatar": "1627071934044_img.jpg"
+  },
+  {
+    "id": 4,
+    "first_name": "lolita",
+    "last_name": "lolita",
+    "email": "lolita@DH.com",
+    "password": "$2a$10$tu5Cljx2XY3jyBhq95mLP.3y0QGey8sOXxC282uAEywRKou.dGSJq",
+    "category": "usuario",
+    "avatar": "1627182191630_img.jpg"
   }
 ]

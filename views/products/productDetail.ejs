@@ -48,14 +48,19 @@
                         <div id="letra-envio" ><p>Recibelo pronto en tu domicilio</p> </div>
                     </div>
                 </div>
-                <div class="content-button">
-                    <form class="btn-size" action="/products/<%=product.id%>/edit">
-                        <button class="btn-productCart-edit">EDITAR</button>
-                    </form>
-                    <form class="btn-size" action="/products/<%=product.id%>?_method=DELETE" method="POST">
-                        <button class="btn-productCart-delete" type="submit" >ELIMINAR</button>
-                    </form>
-                </div>
+                <% if (locals.isLogged) { %>
+                    <div class="content-button">
+                        <form class="btn-size" action="/products/<%=product.id%>/edit">
+                            <button class="btn-productCart-edit">EDITAR</button>
+                        </form>
+                        <form class="btn-size" action="/products/<%=product.id%>?_method=DELETE" method="POST">
+                            <button class="btn-productCart-delete" type="submit" >ELIMINAR</button>
+                        </form>
+                    </div>
+                <%} else{%>
+                    
+                <%}%>
+                
             </div>
         </div>
         <div class="descripcion">
