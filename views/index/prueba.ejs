@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b79dcbefc5.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+    #carrusel {
+    float:left;
+    width:100%;
+    overflow:hidden;
+    height:510px;
+    position:relative;
+    margin-top:20px;
+    margin-bottom:20px;
+    
+}
+ 
+#carrusel .left-arrow {
+    font-size: 50px;
+    position:absolute;
+    left:10px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px;
+}
+ 
+#carrusel .right-arrow {
+    font-size: 50px;
+    position:absolute;
+    right:10px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px;
+}
+ 
+.carrusel {
+    
+    width:4000px;
+    left:0px;
+    position:absolute;
+    z-index:0;
+}
+ 
+.carrusel>div {
+    float: left;
+    height: 500px;
+    margin-right: 5px;
+    width: 500px;
+    text-align:center;
+}
+ 
+.carrusel img {
+    width: 100%;
+    height: 100%;
+    cursor:pointer;
+}
+ 
+.product {
+    border:#39b54a 1px solid;
+}
+</style>
+<body>
+    <div id="carrusel">
+        <a href="#" class="left-arrow"><i class="fas fa-arrow-alt-circle-left"></i></a>
+        <a href="#" class="right-arrow"><i class="fas fa-arrow-circle-right"></i></a>
+        <div class="carrusel">
+            <div class="product" id="product_0">
+                <img src="/images/carrusel/xboxone.jpg" width="195" height="100" />
+            </div>
+            <div class="product" id="product_1">
+                <img src="/images/carrusel/pcGamer.jpg" width="195" height="100" />
+            </div>
+            <div class="product" id="product_2">
+                <img src="/images/carrusel/play4.jpg" width="195" height="100" />
+            </div>
+            <div class="product" id="product_3">
+                <img src="/images/carrusel/playstation-5.jpg" width="195" height="100" />
+            </div>
+            <div class="product" id="product_4">
+                <img src="/images/carrusel/switch.jpg" width="195" height="100" />
+            </div>
+            <div class="product" id="product_5">
+                <img src="/images/carrusel/xboxSeries.jpg" width="195" height="100" />
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script>
+var current = 0;
+var imagenes = new Array();
+ 
+$(document).ready(function() {
+    var numImages = 6;
+    if (numImages <= 3) {
+        $('.right-arrow').css('display', 'none');
+        $('.left-arrow').css('display', 'none');
+    }
+ 
+    $('.left-arrow').on('click',function() {
+        if (current > 0) {
+            current = current - 1;
+        } else {
+            current = numImages - 3;
+        }
+ 
+        $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+ 
+        return false;
+    });
+ 
+    $('.left-arrow').on('hover', function() {
+        $(this).css('opacity','0.5');
+    }, function() {
+        $(this).css('opacity','1');
+    });
+ 
+    $('.right-arrow').on('hover', function() {
+        $(this).css('opacity','0.5');
+    }, function() {
+        $(this).css('opacity','1');
+    });
+ 
+    $('.right-arrow').on('click', function() {
+        if (numImages > current + 3) {
+            current = current+1;
+        } else {
+            current = 0;
+        }
+ 
+        $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+ 
+        return false;
+    }); 
+ });
+</script>
+</body>
+</html>

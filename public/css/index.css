@@ -16,7 +16,7 @@ header {
     align-content: center;
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 2;
 }
 /*id hamburguer*/
 #hamburguer{
@@ -127,26 +127,45 @@ input[type="checkbox"]:checked + .navbar-hamburguer{
     background-color: #00db82;
     border-radius: 5px;
     padding: 5px;
+    height: 45px;
 }
 .fa-shopping-cart, .fa-user{
     color: white;
 }
+
+#imgUserLogged {
+    height: 100%;
+    border-radius: 100%;
+    border: solid white 1px;
+} 
+
+
 /* fin id login*/
 /*Fin Nuevo Header*/
+
+/*usurario loggeado*/
+#userLogged{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    text-align: center;
+}
+/*FIN usuario loggeado*/
 
 /*Modificacion navbar version escritorio*/
 #content-navbar-desk{
     display: none;
-    border: solid 1px #ebebeb;
     width: 100%;
-    height: auto;
+    border: solid 1px #ebebeb;
     background-color: #ebebeb;
 }
 
 #navbar-desk {
+    padding: 0 80px;
     display: flex;
     justify-content: space-around;
-    align-items: initial;
     list-style: none;
     text-decoration: none;
 }
@@ -154,32 +173,69 @@ input[type="checkbox"]:checked + .navbar-hamburguer{
 
 
 /*Modificacion banner*/
-#banner {
+#carrusel {
+    float:left;
+    width:90%;
+    margin: 0 5%;
+    overflow:hidden;
+    height:400px;
+    position:relative;
+    margin-top:20px;
+    margin-bottom:20px;
+    
+}
+ 
+#carrusel .left-arrow {
+    font-size: 50px;
+    position:absolute;
+    left:10px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px;
+    color: #00db82;
+}
+ 
+#carrusel .right-arrow {
+    font-size: 50px;
+    position:absolute;
+    right:10px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px;
+    color: #00db82;
+}
+ 
+.carrusel {
+    
+    width:4000px;
+    left:0px;
+    position:absolute;
+    z-index:0;
+}
+ 
+.carrusel>div {
+    float: left;
+    height: 400px;
+    margin-right: 5px;
+    width: 400px;
+    text-align:center;
+}
+ 
+.carrusel img {
     width: 100%;
-    
+    height: 100%;
+    cursor:pointer;
 }
 
-.banner-container {
-    display: relative;
-    background-color: #ebebeb;
-    
+.carrusel img {
+    width: 100%;
+    height: 100%;
+    cursor:pointer;
 }
+/*Nuevo banner-Carrusel*/
 
-.flechas {
-    position: absolute;
-}
 
-.fa-chevron-left {
-    top: 80px;
-    left: 20px;
-}
-
-.fa-chevron-right {
-    top: 80px;
-    right: 20px;
-}
-
-/*Fin Modificacion banner*/
+/*FIN Nuevo banner-Carrusel*/
 
 /*Nuevo contenido main imagenes*/
 
@@ -436,8 +492,16 @@ a {
     .consolas{
         display: none;
     }
+    #carrusel {
+        display: block;
+    }
     #content-navbar-desk{
         display: block;
+        
+    }
+    div ul li a img{
+        width: 100%;
+        border-radius: 10%;
     }
     /* Banner*/
     

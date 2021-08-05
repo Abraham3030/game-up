@@ -88,50 +88,5 @@
     "category": "switch",
     "description": "Durante años Street Fighter ha sido uno de los mejores videojuegos dentro del género de pelea. Vas a poder batallar con diversos personajes, entre ellos las clásicas figuras de Ryu y Ken, que serán tus aliados mientras te diviertes jugando. Interactúa con otros jugadoresPodrás disfrutar de una experiencia inigualable, ya que te permite jugar con tus amistades y compartir momentos inolvidables.",
     "image": "street-fighter.webp"
-  },
-  {
-    "name": "Resident Evil",
-    "price": "1500",
-    "discount": "10",
-    "category": "playstation",
-    "description": "kwekwe",
-    "id": 11,
-    "image": "new-product.jpg"
-  },
-  {
-    "name": "prueba1",
-    "price": "100",
-    "discount": "15",
-    "category": "playstation",
-    "description": "prueba edicion y despues eliminar",
-    "id": 12,
-    "image": "new-product.jpg"
-  },
-  {
-    "name": "nueva prueba",
-    "price": "15000",
-    "discount": "10",
-    "category": "",
-    "description": "nueva prueba",
-    "id": 13,
-    "image": "new-product.jpg"
-  },
-  {
-    "id": 14,
-    "name": "aaa",
-    "price": "aaa",
-    "discount": "15",
-    "category": "switch",
-    "description": "aasdasdas",
-    "image": "new-product.jpg"
-  },
-  {
-    "id": 15,
-    "name": "aaaaaaaaa",
-    "price": "1000",
-    "discount": "1",
-    "category": "playstation",
-    "description": "adasdasasdda",
-    "image": "new-product.jpg"
   }
 ]

@@ -22,7 +22,7 @@ const model = {
 		res.render('usersList', {users});
 	},
 	// Perfil usuario
-	profile: (req,res) => {
+	userProfile: (req,res) => {
 		let userId = req.params.id;
 		console.log(userId);
 		const user = users.find((usuario) => {
@@ -97,8 +97,14 @@ const model = {
         const userIdex = users.findIndex(usuario =>{
           	return usuario.id == req.params.id;
         });
-    
-        users[userIdex]={...users[userIdex], ...userInfo};
+		
+		// if(!req.file.filename){
+			//users[userIdex]={...users[userIdex], ...userInfo, avatar: req.file.filename};	
+			users[userIdex]={...users[userIdex], ...userInfo};	
+		// }else {
+			// users[userIdex]={...users[userIdex], ...userInfo};
+		// }
+        
     
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
         res.redirect("/users/list");

@@ -1,13 +1,10 @@
-const fs = require('fs');
-const path = require('path');
 const model = require('../models/productos.model');
 
-const productsFilePath = path.join(__dirname, "../database/productsDataBase.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-
-const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
 const controller = {
+   // Vista cart
+   Cart: (req, res) => {
+    res.render('productCart');
+  },
   
   products: model.products,
 
@@ -21,13 +18,7 @@ const controller = {
 
   update: model.update,
     
-  destroy: model.destroy
-    /*
-    productDetail: (req, res) => {
-        res.render('productDetail');
-    },*/
-    
-   
+  destroy: model.destroy  
 };
 
 module.exports = controller;

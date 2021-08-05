@@ -5,17 +5,16 @@
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-    
-    <header>
-        <%- include('../partials/header');%>
-    </header>
-    <div id="content-navbar-desk">
-        <ul id="navbar-desk">
-            <li><a href="#playstation">PlayStation</a></li>
-            <li><a href="#nintendo">Nintendo Switch</a></li>
-        </ul>
+    <!--header-->
+    <%- include('../partials/header');%>
+    <!--navbar-desk-->
+    <div id="userLogged">
+        <% if (locals.isLogged) { %>
+        <h1>Bienvenido: <%=userLogged.first_name%></h1>
+        <%}%>
     </div>
-    
+    <!--navbar-desk-->
+    <%- include('../partials/navbar-desk.ejs');%>    
     <!--Nuevo contenido main imagenes-->
     <main>
         

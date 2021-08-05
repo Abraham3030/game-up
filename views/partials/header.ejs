@@ -34,10 +34,11 @@
     </div>
     <form id="login">
             <% if (locals.isLogged) { %>
-                <div style="display: flex; justify-content: center; align-items: center;">
-
-                    <a href="/users/<%=userLogged.id%>"><img style="width: 70px; border-radius: 50px;" src="/images/users/<%=userLogged.avatar%>" alt=""></a>
-                    
+                <div class="contenedor-login-fas" id="cart">
+                    <a href="/users/<%=userLogged.id%>"><img id="imgUserLogged" src="/images/users/<%=userLogged.avatar%>" alt=""></a>
+                </div>
+                <div class="contenedor-login-fas"  id="user">
+                    <a href="/users/logout"><i class="fas fa-sign-out-alt"></i></a>
                 </div>
             <%} else{%>
                 <div class="contenedor-login-fas" id="user">

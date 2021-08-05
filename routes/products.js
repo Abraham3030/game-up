@@ -7,8 +7,13 @@ const productsController = require('../controllers/productsController');
 // Configuracion de autenticacion para poder crear un producto
 const authMiddleware = require('../middlewares/authMiddleware');
 
-/* CRUD de productos */
+// Configuracion de rutas
 
+// carrito
+// Vista product Cart
+router.get('/cart', authMiddleware, productsController.Cart);
+
+/* CRUD de productos */
 // 1. Listado de productos
 // Ver todos los Productos
 router.get('/', productsController.products)

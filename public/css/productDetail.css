@@ -82,6 +82,7 @@ header {
 .fa-search{
     color: white;
 }
+
 /* fin id search*/
 /*id login*/
 #login{
@@ -103,10 +104,17 @@ header {
     background-color: #00db82;
     border-radius: 5px;
     padding: 5px;
+    height: 45px;
 }
 .fa-shopping-cart, .fa-user{
     color: white;
 }
+
+#imgUserLogged {
+    height: 100%;
+    border-radius: 100%;
+    border: solid white 1px;
+} 
 .navbar-hamburguer{
     background-color: #FFF;
     position: absolute;

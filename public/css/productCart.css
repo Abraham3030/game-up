@@ -58,11 +58,26 @@ header {
 #user {
     display: none;
 }
-#cart, #bars{
+#bars{
     background-color: #00db82;
     border-radius: 5px;
     padding: 5px;
 }
+#cart{
+    background-color: #00db82;
+    border-radius: 5px;
+    padding: 5px;
+    height: 45px;
+}
+.fa-shopping-cart, .fa-user{
+    color: white;
+}
+
+#imgUserLogged {
+    height: 100%;
+    border-radius: 100%;
+    border: solid white 1px;
+} 
 .fa-shopping-cart, .fa-user, .fa-search, .fa-bars {
     color: white;
 }
