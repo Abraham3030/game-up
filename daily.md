@@ -1,17 +1,6 @@
-Comunicación sobre el sprint 5:
-===============================
-Se dividirán las consignas del sprint 5, para que cada integrante realice una actividad.
-
-----------------
-
 ----------------
 Consigna 1 Realizar un breve retrospectiva
 ===============================
-José Abraham Montelongo Campos
-----------------
-Cesar Antonio Villa Flores
-----------------
-
 Nuevamente piensen qué hicieron bien en el sprint anterior, qué hicieron mal, qué
 deberían empezar a hacer, qué deberían dejar de hacer.
 
@@ -20,9 +9,6 @@ deberían empezar a hacer, qué deberían dejar de hacer.
 ----------------
 Consigna 2 Actualizar el tablero de trabajo
 ===============================
-José Abraham Montelongo Campos
-----------------
-
 Discutan las tareas que se desprenden de este documento, determinen en qué orden deberán ser realizadas, asignen integrantes a cada tarea.
 
 ----------------
@@ -30,89 +16,101 @@ Discutan las tareas que se desprenden de este documento, determinen en qué orde
 ----------------
 Consigna 3 (Opcional) Implementar daily / weekly standups
 ===============================
-José Abraham Montelongo Campos
-----------------
-Cesar Antonio Villa Flores
-----------------
 
 ----------------
 
-Usuarios y middlewares
+Bases de datos y Sequelize
 ===============================
 ----------------
 
 ----------------
-Consigna 4 Implementar la entidad de usuarios
+Consigna 4 Diagrama de base de datos
 ===============================
-José Abraham Montelongo Campos
+Toda buena base de datos empieza en la mesa de dibujo. Tendrán que armar el
+Diagrama de Entidades y Relaciones (DER).
+Recuerden que luego deberán implementar Sequelize y que, por lo general, los ORMs como este trabajan mejor con los nombres de tablas en inglés.
+
+● Usuarios (recuerden ver los campos sugeridos en el sprint 3).
+● Productos (recuerden ver los campos sugeridos en el sprint 3).
+● Tablas secundarias (según lo requiera su proyecto).
+○ Para productos: categorías, marcas, colores, talles, etc.
+○ (Opcional) Para usuarios: categorías.
+● (Opcional) Carrito de compras.
+○ Con detalle de quién hizo la compra, cantidad de ítems y precio total.
+● (Opcional) Productos de cada carrito de compras.
+
+Entregable: diagrama de entidad-relación de su base de datos en formato PDF.
 ----------------
 
-Tomando como ejemplo lo que hicieron para productos, replicar la estructura de archivos y directorios que necesitarán para implementar las funcionalidades.
-
-● Rutas: src/routes/users.js
-● Controlador: src/controllers/usersController.js
-● Vistas: src/views/users/
-● Directorio para imágenes: public/images/users/
-● Colección: src/data/users.json
-
-
 ----------------
-
-----------------
-Consigna 5 Implementar el registro de usuarios
+Consigna 5 Script de estructura
 ===============================
-José Abraham Montelongo Campos
-----------------
-Tomando como referencia el formulario de creación de productos, implementar el formulario de registro de usuarios.
+Tomando como referencia el diagrama del punto anterior, tienen que escribir las sentencias de SQL que crearán las tablas y sus relaciones.
+● Deberá incluir la creación de la base de datos (create database…).
+● Deberá incluir la creación de todas las tablas del sitio (create table…).
+● Deberá incluir los tipos de datos de los campos y sus restricciones (primary keys, (not) null, unique, default, etc).
+● Deberá incluir las relaciones entre las diferentes tablas (foreign keys).
 
-● Deberá incluir los campos mínimos mencionados en el sprint anterior.
-● Deberá permitir la subida de una imagen de perfil (con Multer).
-● Deberá encriptar la contraseña ingresada por el usuario (con bcrypt.js).
-● Deberá guardar los datos enviados en el archivo JSON de usuarios.
-
-----------------
+Entregable: archivo structure.sql que permita crear la base de datos completa.
 
 ----------------
-Consigna 6 Implementar el login de usuarios
+
+----------------
+Consigna 6 (Opcional) Script de datos
 ===============================
-Cesar Antonio Villa Flores
+Ya tenemos la estructura, ahora faltan los datos. El script de datos permite que cualquier desarrollador (o docente 😉) descargue el proyecto, ejecute el script y ya pueda ver el sitio funcionado sin más pasos.
+
+El script debería:
+● Poblar la tabla de usuarios.
+● Poblar la tabla de productos.
+● Poblar las tablas secundarias (categorías, marcas, colores, talles, etc).
+● (Opcional) Poblar la tabla de carrito de compras.
+● (Opcional) Poblar la tabla de productos de carritos de compras.
+
+Una vez definidos los campos de sus tablas, nuevamente pueden utilizar Mockaroo, pero esta vez para generar el archivo SQL con datos. 😉☝️
+
+Entregable: archivo con extensión data.sql que permita poblar la base con datos.
+
 ----------------
 
-Ahora, es momento de poner en práctica middlewares, sesiones y cookies. Deberán implementar un formulario de login que:
-
-1. Incluya los campos de email y password.
-2. Verifique la información enviada por el usuario y según el caso:
-2.1 Redireccione a la home o a la página de perfil en caso de éxito y muestre los datos del usuario en algún lugar del sitio, como el header.
-2.2 Redireccione nuevamente al login en caso de error.
-
 ----------------
-
-----------------
-Consigna 7 (Opcional) Implementar la función de recordar al usuario
+Consigna 7 Creación de carpeta Sequelize y archivos de modelos
 ===============================
-Cesar Antonio Villa Flores
-----------------
-Deberán agregarle al formulario de login la posibilidad de que se recuerde al usuario (checkbox). En caso de que el usuario decida ser recordado:
+Mediante la herramienta sequelize-cli deberán crear la carpeta que contenga los archivos de configuración de Sequelize. Una vez configurado Sequelize, seguirá crear los archivos de modelos para explicarle cómo es la estructura de la base de datos.
 
-● Utilizar cookies para guardar esa información en el navegador.
-● Implementar un middleware de aplicación que busque la cookie y loguee al
-   usuario en caso de que exista y sus datos sean correctos.
+La carpeta database deberá incluir:
+● Los archivos de configuración para que Sequelize se conecte a la base de datos.
+● Los archivos de modelos para representar las tablas de:
+○ Usuarios.
+○ Productos.
+○ Tablas secundarias (categorías, marcas, colores, talles, etc).
+○ (Opcional) Carrito de compras.
+○ (Opcional) Productos de cada carrito de compras.
+● Los modelos deben incluir todas las relaciones existentes en la base de datos.
 
+Entregable: carpeta database que incluya los archivos de configuración y archivos de modelos junto con sus relaciones.
 ----------------
 
 ----------------
-Consigna 8 Implementar rutas de huéspedes y de usuarios
+Consigna 8 ¡CRUD!
 ===============================
-Cesar Antonio Villa Flores
+Ya es hora de tener un CRUD como la gente. Qué bueno que tenemos a Sequelize de nuestro lado. Les pedimos que en su sitio se pueda:
+
+● Para productos:
+○ Crear
+○ Editar
+○ Eliminar
+○ Listar
+○ Ver el detalle
+○ Buscar
+
+● Para usuarios:
+○ Crear
+○ Editar
+○ Ver el detalle
+
+● (Opcional) CRUDs de tablas secundarias.
+● (Opcional) Agregar paginado a los listados y buscadores.
+
+Entregable: rutas, controladores y vistas necesarias para que suceda lo detallado previamente utilizando Sequelize para trabajar con la base de datos.
 ----------------
-Ahora que tienen un login funcionando, su próximo desafío será el de separar las rutas que se pueden acceder en cualquier momento, de las que se puede acceder solo si uno no está logueado y, por último, de las que requieren estar logueado.
-
-En cada caso deberán implementar el comportamiento que corresponda:
-● Rutas accesibles por cualquiera → sin cambios
-● Rutas accesibles solo sin login → redirigen al perfil
-● Rutas accesibles solo con login → redireccionan al login
-
-
-
-----------------
-

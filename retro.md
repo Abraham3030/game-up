@@ -37,3 +37,11 @@ Se llego a la entrega del sprint 3 con exito, aunque tenemos detalles tecnicos, 
 Seguimos aprendiendo y vamos mejorando, hay una excelente comunicacion entre los integrantes, siempre exite apoyo mutuo entre los integrantes.
 
 ## Cesar Antonio Villa Flores:
+
+# *retro del sprint 5*
+
+## José Abraham Montelongo Campos:
+
+
+
+## Cesar Antonio Villa Flores:
