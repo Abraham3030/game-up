@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/productDetail.css">
+</head>
+</head>
+<body>       
+    <header>
+        <%- include('../partials/header') %>        
+    </header>
+    <div class="contenedor"> 
+        <div class="vista768">
+            <div class="contenedor-imagenes-carrito">   
+                <div class="contenedor-imagenes">
+                    <div class="imagen-principal">
+                        <img src="/images/index/<%=product.image%>" alt="banner">
+                    </div>
+                </div>
+            </div>
+            <div class="detalles">
+                <div id="titulo-juego">
+                    <h3><%=product.name%></h3>
+                </div>
+                <div class="precio">
+                    <p>Price $<%=product.price%> </p>
+                    <p id="discount"><%= product.discount%>% OFF</p>
+                </div>
+                <div class="final-price">
+                    <h4><span>Final price </span>$<%=`${product.price-((product.price*product.discount)/100)}`%></h4>
+                </div>
+                <div >
+                    <!--<form class="btn" action="/productCart" method="POST">
+                            <label for="productCart"></label>
+                            <select class="label-productCart" name="productCart" id="productCart">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                            </select>
+                            <div class="espacio-form"></div>
+                            <input class="btn-productCart" type="submit" value="Añadir al carrito">
+                    </form>-->
+                </div>
+                <div class="descripcion-envio">
+                    <div class="envio">
+                        <i class="fas fa-shipping-fast"><span> Envío Gratis</span></i>
+                        <div id="letra-envio" ><p>Recibelo pronto en tu domicilio</p> </div>
+                    </div>
+                </div>
+                <% if (locals.isLogged) { %>
+                    <div class="content-button">
+                        <form class="btn-size" action="/products/<%=product.id%>/edit">
+                            <button class="btn-productCart-edit">EDITAR</button>
+                        </form>
+                        <form class="btn-size" action="/products/<%=product.id%>?_method=DELETE" method="POST">
+                            <button class="btn-productCart-delete" type="submit" >ELIMINAR</button>
+                        </form>
+                    </div>
+                <%} else{%>
+                    
+                <%}%>
+                
+            </div>
+        </div>
+        <div class="descripcion">
+            <div class="detalles-producto espacio">
+                <div>
+                    <label for="show-nav2">
+                        Detalle del Producto <span>+</span>
+                    </label>  
+                </div>
+                    <input type="checkbox" id="show-nav2" hidden>
+                    <ul class="navbar__menu2">
+                      <li>                                
+                        <b><%=product.description%></b>
+                      </li>
+                    </ul>
+            </div>
+            <div class="caracteristicas espacio">
+                <div>
+                    <label for="show-nav3">
+                        Características destacadas <span>+</span>
+                    </label>  
+                </div>
+                    <input type="checkbox" id="show-nav3" hidden>
+                    <ul class="navbar__menu3">
+                        <li>Multiplataforma y multigeneración.</li>
+                        <li>Tiempos de carga considerablemente reducidos.</li>
+                        <li>Gráficos mejorados</li>
+                        <li>Resolución dinámica 4K</li>
+                    </ul>
+            </div>    
+        </div>
+    </div>
+    <footer >
+       <%- include('../partials/footer') %> 
+    </footer>
+</body>
+</html>

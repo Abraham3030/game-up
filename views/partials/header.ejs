@@ -1,0 +1,53 @@
+<header>
+    <form id="hamburguer" name="hamburguer" name="">
+        <div class="contenedor-login-fas" id="bars">
+            <label for="show-hamburguer">
+                <i class="fas fa-bars"></i>
+            </label>
+            <div>
+                <input type="checkbox" id="show-hamburguer" hidden>
+                <ul class="navbar-hamburguer">
+                    <% if (locals.isLogged) { %>
+                        <li class="li-hover "><a href="/users/list">Lista de usuarios</a></li>
+                        <li class="li-hover "><a href="/products/create">Crear producto</a></li>
+                        <li class="li-hover "><a href="/users/logout">Salir / Logout</a></li>
+                    <%} else{%>
+                        <li class="li-hover "><a href="/users/login">Iniciar sesion</a></li>
+                        <li class="li-hover "><a href="/users/register">Crear cuenta</a></li>
+                        <li class="li-hover consolas"><a href="/playstation">PlayStation</a></li>
+                        <li class="li-hover consolas"><a href="/nintendo-switch">Switch</a></li>
+                    <%}%>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    </form>
+    <div id="logo-header">
+        <a href="/"><img id="logo" src="/images/logoGameUp.png"/></a>
+    </div>
+    <div id="search">
+        <form action="/search" method="GET" id="form-search">
+            <input id="buscador" type="text" name="keywords" placeholder="Buscar productos"/>
+            <button id="boton-search" type="submit"><i class="fas fa-search"></i></button>
+        </form>                               
+    </div>
+    <form id="login">
+            <% if (locals.isLogged) { %>
+                <div class="contenedor-login-fas" id="cart">
+                    <a href="/users/<%=userLogged.id%>"><img id="imgUserLogged" src="/images/users/<%=userLogged.avatar%>" alt=""></a>
+                </div>
+                <div class="contenedor-login-fas"  id="user">
+                    <a href="/users/logout"><i class="fas fa-sign-out-alt"></i></a>
+                </div>
+            <%} else{%>
+                <div class="contenedor-login-fas" id="user">
+                    <a href="/users/login"><i class="far fa-user"></i></a>
+                </div>
+                <div class="contenedor-login-fas" id="cart">
+                    <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            <%}%>
+        
+    </form>
+</header>

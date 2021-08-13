@@ -1,0 +1,80 @@
+<div id="carrusel">
+    <a href="#" class="left-arrow"><i class="fas fa-arrow-circle-left"></i></a>
+    <a href="#" class="right-arrow"><i class="fas fa-arrow-circle-right"></i></a>
+    <div class="carrusel">
+        <div class="product" id="product_0">
+            <img src="/images/carrusel/switch.jpg"/>
+        </div>
+        <div class="product" id="product_1">
+            <img src="/images/carrusel/pcGamer.jpg"/>
+        </div>
+        <div class="product" id="product_2">
+            <img src="/images/carrusel/play4.jpg"/>
+        </div>
+        <div class="product" id="product_3">
+            <img src="/images/carrusel/playstation-5.jpg"/>
+        </div>
+        <div class="product" id="product_4">
+            <img src="/images/carrusel/xboxone.jpg"/>
+        </div>
+        <div class="product" id="product_5">
+            <img src="/images/carrusel/xboxSeries.jpg"/>
+        </div>
+        <div class="product" id="product_5">
+            <img src="/images/carrusel/nintendo.jpg"/>
+        </div>
+        <div class="product" id="product_5">
+            <img src="/images/carrusel/coleccionables.jpg"/>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script>
+var current = 0;
+var imagenes = new Array();
+ 
+$(document).ready(function() {
+    var numImages = 7;
+    if (numImages <= 3) {
+        $('.right-arrow').css('display', 'none');
+        $('.left-arrow').css('display', 'none');
+    }
+ 
+    $('.left-arrow').on('click',function() {
+        if (current > 0) {
+            current = current - 1;
+        } else {
+            current = numImages - 3;
+        }
+ 
+        $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+ 
+        return false;
+    });
+ 
+    $('.left-arrow').on('hover', function() {
+        $(this).css('opacity','0.5');
+    }, function() {
+        $(this).css('opacity','1');
+    });
+ 
+    $('.right-arrow').on('hover', function() {
+        $(this).css('opacity','0.5');
+    }, function() {
+        $(this).css('opacity','1');
+    });
+ 
+    $('.right-arrow').on('click', function() {
+        if (numImages > current + 3) {
+            current = current+1;
+        } else {
+            current = 0;
+        }
+ 
+        $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+ 
+        return false;
+    }); 
+ });
+</script>
+

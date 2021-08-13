@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head') %> 
+    <link rel="stylesheet" href="/css/login-register.css">
+    <link rel="stylesheet" href="/css/create.css">
+</head>
+</head>
+<body>
+    <div class="contenedor-general">
+        <header>                
+            <div class="nav-bar">            
+            <a href="/"><img id="logo" src="/images/logoGameUp.png"/></a>
+            </div>                                
+        </header>
+
+        
+    
+        <div class="contenedor margen-login-register">
+    
+            <div class="tab-items">
+                <div class="marco">
+                    <p>Editar Cuenta</p>
+                </div>
+            </div>
+            <!-- Con el enctype no puedo actualizar la informacion con el metodo PUT,
+            pero si se lo quito el enctype se borra la imagen y no la pudo cargar de nuevo.-->
+            <form action="/users/<%= userToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="invoiceBox">
+                    <label for="">Foto de perfil</label>
+                    <div class="imagen">
+                        <figure><img  src="/images/users/<%=userToEdit.avatar%>" alt="imagen de usuario"></figure>
+                    </div>
+                    <label for="file">
+                      <div class="boxFile" >
+                        Cambiar foto
+                      </div>
+                    </label>
+                    <input  id="file" 
+                            name="avatar" 
+                            size="6000" 
+                            type="file" 
+                            value="<%= userToEdit.avatar %>"
+                            >
+                  </div>
+                
+                <label for="first_name">Nombre</label>
+			    <input  type="text" 
+                        id="first_name" 
+                        name="first_name" 
+                        placeholder="Ejemplo: Evelyn" 
+                        class="form-input"
+                        value="<%= userToEdit.first_name %>"
+                        >
+
+                <label for="last_name">Apellido</label>
+				<input  type="text" 
+                        id="last_name" 
+                        name="last_name" 
+                        placeholder="Ejemplo: Valdez Castro" 
+                        class="form-input"
+                        value="<%= userToEdit.last_name %>"
+                        >
+
+                <label for="email" class="form-label">Email</label>
+				<input  type="text" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Ej: evely@mail.com" 
+                        class="form-input"
+                        value="<%= userToEdit.email%>">
+
+                <div class="btn-container">
+                    <button class="btn-login" type="submit">GUARDAR CAMBIOS</button>
+                </div>
+            </form>
+    
+        </div>
+
+    </div>
+    
+
+    <footer >
+       <%- include('../partials/footer') %>         
+    </footer>
+    <script>
+        function mostrarContrasena(){
+            var tipo = document.getElementById("password");
+            if(tipo.type == "password"){
+                tipo.type = "text";
+            }else{
+                tipo.type = "password";
+            }
+        }
+
+        document.querySelector('#file').addEventListener('change', 
+        function(e) {
+            var boxFile = document.querySelector('.boxFile');
+            boxFile.classList.remove('attached');
+            boxFile.innerHTML = e.target.files[0].name;
+            boxFile.classList.add('attached');
+           
+        });
+      </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head') %> 
+    <link rel="stylesheet" href="/css/login-register.css">
+    <link rel="stylesheet" href="/css/create.css">
+</head>
+</head>
+<body>
+    <div class="contenedor-general">
+        
+        <header>                
+            <div class="nav-bar">            
+                <a href="/"><img id="logo" src="/images/logoGameUp.png"/></a>          
+            </div>                                
+        </header>
+    
+        <div class="contenedor">
+
+                <div class="tab-items">
+                    <div class="marco">
+                        <p>Iniciar Sesion</p>   
+                    </div>
+                    <div class="marco">
+                        <a href="/users/register"><p>Crear Cuenta</p></a>
+                    </div>
+                </div>
+            
+
+            <form action="/users/login" method="POST" >
+
+                <label for="email" class="form-label">Email</label>
+				<input  type="text" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Ej: evely@mail.com" 
+                        class="form-input"
+                        value="<%= locals.oldData ? oldData.email : null %>">
+                <% if(locals.errors && errors.email) {%>
+                    <div class="text-danger">
+                        <%= errors.email.msg %>
+                    </div>
+                <% } %>
+
+                <label>Contraseña</label>
+                <div class="content-password">
+                    <input  type="password" 
+                            name="password" 
+                            id="password" 
+                            placeholder="Contraseña">
+                    <input id="check" type="checkbox" onclick="mostrarContrasena()">
+                    <span style="font-size: 10px; padding-left: 5px;">Mostrar</span>
+                </div>
+                <% if(locals.errors && errors.password) {%>
+                    <div class="text-danger">
+                        <%= errors.password.msg %>
+                    </div>
+                <% } %>
+
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="remember_user">
+                    <span style="font-size: 15px; padding-left: 5px;">Recordar mi usuario</span>
+                </label>
+                <div class="btn-container" style="margin-top: 10px">
+                    <button class="btn-login" type="submit">INGRESAR</button>
+                </div>
+
+            </form>     
+        </div>
+    </div>
+
+    <footer >
+       <%- include('../partials/footer') %> 
+    </footer>
+    <script>
+        function mostrarContrasena(){
+            var tipo = document.getElementById("password");
+            if(tipo.type == "password"){
+                tipo.type = "text";
+            }else{
+                tipo.type = "password";
+            }
+        }
+      </script>
+</body>
+</html>
