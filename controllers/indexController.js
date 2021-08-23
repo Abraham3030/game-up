@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const productsFilePath = path.join(__dirname, "../database/productsDataBase.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+// const fs = require('fs');
+// const path = require('path');
+// const productsFilePath = path.join(__dirname, "../database/productsDataBase.json");
+// const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 let db = require("../database/models");
 
 const controller = {
@@ -14,10 +14,14 @@ const controller = {
     },
     search: (req, res) => {
       const {keywords} = req.query;
-      const resultados = products.filter(({description, name})=>{
-        return description.includes(keywords) || name.includes(keywords);
-        });
-      res.render('results', {resultados, keywords, user: req.session.userLogged});
+      db.Products.findAll({
+        where: {name:{
+          [db.Sequelize.Op.like]: "%" + req.query.keywords + "%"// Colocando una concatenacion funciono la busqueda de cualquier producto
+        }}
+      })
+          .then(resultados => {
+              res.render('results', {resultados, keywords, user: req.session.userLogged});
+          });
     },
     playstation:  (req, res) => {
       db.Products.findAll({
@@ -67,6 +71,13 @@ const controller = {
     //     return product.category === 'switch';
     //   });
     //   res.render('nintendoswitch', {nintendoswitch});
+    // },
+    // search: (req, res) => {
+    //   const {keywords} = req.query;
+    //   const resultados = products.filter(({description, name})=>{
+    //     return description.includes(keywords) || name.includes(keywords);
+    //     });
+    //   res.render('results', {resultados, keywords, user: req.session.userLogged});
     // },
     
 }
