@@ -23,14 +23,18 @@
                     <div class="imagen">
                         <figure><img  src="<%=productToEdit.image%>" alt="imagen de producto"></figure>
                     </div>
-                  </div>
-                  <label for="image">Cambiar imagen del producto</label>
-                  <input  type="text" 
-                      id="image" 
-                      name="image" 
-                      placeholder="Ejemplo: escribe una URL" 
-                      class="form-input"
-                      value="<%= productToEdit.image%>">
+                </div>
+                <label for="image">Cambiar imagen del producto</label>
+                <input  type="text" 
+                    id="image" 
+                    name="image" 
+                    placeholder="Ejemplo: escribe una URL" 
+                    class="form-input"
+                    value="<%= productToEdit.image%>">
+                <label for="image" style="font-size: 12.5px;">*Ingresa una nueva URL para cambiar la imagen del producto</label>
+                <br>
+                <br>
+                
                 <label for="name">Nombre del producto:</label>
 			    <input type="text" id="name" name="name" placeholder="Ej: Resident Evil" class="form-input" value="<%= productToEdit.name %>">
                 <label for="price" class="form-label">Precio del producto:</label>
@@ -52,6 +56,7 @@
                     <option value="Laptop" selected="<%= productToEdit.category === 'Laptop' ? 'selected' : '' %>">Laptop</option>
                     <option value="Accesorios" selected="<%= productToEdit.category === 'Accesorios' ? 'selected' : '' %>">Accesorios</option>
 				</select>
+                <label for="brand" class="form-label">Marca:</label>
                 <select name="brand" id="brand" class="form-input">
 					<option value="">Elegir opción</option>
                     <option value="PlayStation" selected="<%= productToEdit.category === 'PlayStation' ? 'selected' : '' %>">Play Station</option>
@@ -59,6 +64,7 @@
                     <option value="Xbox" selected="<%= productToEdit.category === 'Xbox' ? 'selected' : '' %>">Xbox</option>
                     <option value="DELL" selected="<%= productToEdit.category === 'DELL' ? 'selected' : '' %>">DELL</option>
 				</select>
+                <label for="genre" class="form-label">Genero:</label>
                 <select name="genre" id="genre" class="form-input">
 					<option value="">Elegir opción</option>
                     <option value="Accion" selected="<%= productToEdit.category === 'Accion' ? 'selected' : '' %>">Acción</option>
