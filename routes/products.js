@@ -1,14 +1,25 @@
 // Configuracion express
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
 
 // Configuracion controller productsController
+//const productsController = require('../controllers/productsController');
 const productsController = require('../controllers/productsController');
 // Configuracion de autenticacion para poder crear un producto
 const authMiddleware = require('../middlewares/authMiddleware');
 
-// Configuracion de rutas
+// 2. Formulario de creación de productos
+// Crear Productos
+router.get('/create', authMiddleware, productsController.create); 
+// // 4. Accion de creación (a donde se envía el formulario) 
+router.post('/create', authMiddleware, productsController.store);
+// // Fin crear producto 
 
+// Configuracion de rutas
+// 3. Detalle de un producto particular
+// Obtener un producto
+router.get('/:id', productsController.detail);
+// Fin obtener un producto
 // carrito
 // Vista product Cart
 router.get('/cart', authMiddleware, productsController.Cart);
@@ -19,17 +30,9 @@ router.get('/cart', authMiddleware, productsController.Cart);
 router.get('/', productsController.products)
 // Fin listado de productos
 
-// 2. Formulario de creación de productos
-// Crear Productos
-router.get('/create', authMiddleware, productsController.create); 
-// 4. Accion de creación (a donde se envía el formulario) 
-router.post('/create', authMiddleware, productsController.store);
-// Fin crear producto 
 
-// 3. Detalle de un producto particular
-// Obtener un producto
-router.get('/:id', productsController.detail); 
-// Fin obtener un producto
+
+
 
 // 5. Formulario de edición de productos
 // Editar un producto

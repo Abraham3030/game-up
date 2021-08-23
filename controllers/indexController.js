@@ -2,16 +2,15 @@ const fs = require('fs');
 const path = require('path');
 const productsFilePath = path.join(__dirname, "../database/productsDataBase.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+let db = require("../database/models");
 
 const controller = {
+
     index: (req, res) => {
-        const playstation = products.filter((product)=>{
-			return product.category === 'playstation';
-		});
-		const nintendoswitch = products.filter((product)=>{
-			return product.category === 'switch';
-		});
-		res.render('index', {playstation, nintendoswitch});
+      db.Products.findAll()
+        .then(function(products){
+            res.render('index', {products})
+        });
     },
     search: (req, res) => {
       const {keywords} = req.query;
@@ -20,17 +19,25 @@ const controller = {
         });
       res.render('results', {resultados, keywords, user: req.session.userLogged});
     },
-    playstation: (req, res) => {
-      const playstation = products.filter((product)=>{
-        return product.category === 'playstation';
-      });
-      res.render('playstation', {playstation});
+    playstation:  (req, res) => {
+      db.Products.findAll({
+          where: {
+              brand: "PlayStation"
+          }
+      })
+          .then(playstation => {
+              res.render('playstation', {playstation});
+          });
     },
-    nintendoswitch: (req, res) => {
-      const nintendoswitch = products.filter((product)=>{
-        return product.category === 'switch';
-      });
-      res.render('nintendoswitch', {nintendoswitch});
+    nintendoswitch:  (req, res) => {
+      db.Products.findAll({
+          where: {
+              brand: "Switch"
+          }
+      })
+          .then(nintendoswitch => {
+              res.render('nintendoswitch', {nintendoswitch});
+          });
     },
     profile: (req, res) => {
       //console.log('Estas en Profile');
@@ -40,6 +47,28 @@ const controller = {
         user: req.session.userLogged
       });
     }
+    // index: (req, res) => {
+    //     const playstation = products.filter((product)=>{
+		// 	return product.category === 'playstation';
+		// });
+		// const nintendoswitch = products.filter((product)=>{
+		// 	return product.category === 'switch';
+		// });
+		// res.render('index', {playstation, nintendoswitch});
+    // },
+    // playstation: (req, res) => {
+    //   const playstation = products.filter((product)=>{
+    //     return product.category === 'playstation';
+    //   });
+    //   res.render('playstation', {playstation});
+    // },
+    // nintendoswitch: (req, res) => {
+    //   const nintendoswitch = products.filter((product)=>{
+    //     return product.category === 'switch';
+    //   });
+    //   res.render('nintendoswitch', {nintendoswitch});
+    // },
+    
 }
 
 module.exports = controller;

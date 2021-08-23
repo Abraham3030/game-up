@@ -4,7 +4,7 @@
         <% for(let i = 0; i < playstation.length; i ++) { %>
             <article class="caja-box-shadow">
                 <a href="/products/<%=playstation[i].id%>">
-                    <img  src="/images/index/<%=playstation[i].image%>" alt="imagen de producto">
+                    <img  src="<%=playstation[i].image%>" alt="imagen de producto">
                     <div class="caja">
                         <p><i class="fas fa-shipping-fast"></i></p>                           
                         <p class="precios"><%=playstation[i].price%></p>
