@@ -3,7 +3,7 @@ const path = require('path');
 const bcryptjs = require('bcrypt');
 const model = require('../models/users.model');
 const usersFilePath = path.join(__dirname, "../database/usersDataBase.json");
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+//const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 
 let db = require("../database/models");
@@ -26,6 +26,7 @@ const controlador = {
   // Procesar informacion vista login
   loginProcess: (req, res) => {
     let userToLogin = model.findByField('email', req.body.email);
+    //let userToLogin = db.Users.findAll({where: {email: req.body.email}});
     
     if (userToLogin){
       let isOkThepassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
@@ -68,10 +69,14 @@ const controlador = {
   // Busqueda de usuario
   searchUser: (req, res) => {
       const {keywords} = req.query;
-      const resultadosUsuario = users.filter(({email, last_name, first_name})=>{
-          return email.includes(keywords) || last_name.includes(keywords) || first_name.includes(keywords);
-      });
-      res.render('userResult', {resultadosUsuario, keywords});
+      db.Users.findAll({
+        where: {first_name:{
+          [db.Sequelize.Op.like]: "%" + req.query.keywords + "%"// Colocando una concatenacion funciono la busqueda de cualquier producto
+        }}
+      })
+          .then(resultadosUsuario => {
+              res.render('userResult', {resultadosUsuario, keywords});
+          });
   },
 
   //// nuevo

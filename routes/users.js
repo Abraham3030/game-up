@@ -6,7 +6,7 @@ const router = express.Router();
 const usersController = require('../controllers/usersController');
 
 // Middlewares
-const uploadFile = require('../middlewares/multerMiddleware');
+//const uploadFile = require('../middlewares/multerMiddleware');
 const validations = require('../middlewares/validateRegisterMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
@@ -50,7 +50,7 @@ router.get('/:id', authMiddleware, usersController.userProfile);
 // Editar un usuario
 router.get('/:id/edit', usersController.edit); 
 // 6. Formulario de edición (a donde se envía el formulario)
-router.put('/:id', uploadFile.single('avatar'), usersController.update); 
+router.put('/:id', usersController.update); 
 // Fin editar un usuario
 
 // 7 Acción de usuario

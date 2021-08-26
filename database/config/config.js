@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": "",
-    "database": "game_up_basic",
+    "database": "heroku_ff97a4ef30cc0e6",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "port":"3306"
