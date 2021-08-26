@@ -29,20 +29,16 @@
                 <div class="invoiceBox">
                     <label for="">Foto de perfil</label>
                     <div class="imagen">
-                        <figure><img  src="/images/users/<%=userToEdit.avatar%>" alt="imagen de usuario"></figure>
+                        <figure><img  src="<%=userToEdit.avatar%>" alt="imagen de usuario"></figure>
                     </div>
-                    <label for="file">
-                      <div class="boxFile" >
-                        Cambiar foto
-                      </div>
-                    </label>
-                    <input  id="file" 
-                            name="avatar" 
-                            size="6000" 
-                            type="file" 
-                            value="<%= userToEdit.avatar %>"
-                            >
-                  </div>
+                </div>
+                <label for="avatar">Cambiar foto de perfil</label>
+                  <input  type="text" 
+                      id="avatar" 
+                      name="avatar" 
+                      placeholder="Ejemplo: escribe una URL" 
+                      class="form-input"
+                      value="<%= userToEdit.avatar%>">
                 
                 <label for="first_name">Nombre</label>
 			    <input  type="text" 

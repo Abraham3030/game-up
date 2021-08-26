@@ -38,7 +38,7 @@ router.get('/list', authMiddleware, usersController.list);
 // Crear Usuario/ Obtener información con fromulario
 router.get('/register', guestMiddleware, usersController.create);
 // 4.Procesar formulario de usuarios
-router.post('/register', uploadFile.single('avatar'), validations, usersController.store);
+router.post('/register', validations, usersController.store);
 
 // 3. Detalle de un usuario particular
 // Obtener un Usuario/ Detalle de usuario

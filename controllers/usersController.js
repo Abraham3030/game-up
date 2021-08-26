@@ -5,6 +5,9 @@ const model = require('../models/users.model');
 const usersFilePath = path.join(__dirname, "../database/usersDataBase.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
+
+let db = require("../database/models");
+
 const controlador = {
   // Formulario de registro
   register: (req, res) => {
@@ -70,21 +73,66 @@ const controlador = {
       });
       res.render('userResult', {resultadosUsuario, keywords});
   },
+
+  //// nuevo
+  create: function (req, res) {
+    res.render("register");
+  },
+  store: async function (req, res) {
+    await db.Users.create(
+        req.body
+    )
+    res.redirect("/users/list")
+  },
+  edit: async function(req, res) {
+    const userToEdit = await db.Users.findByPk(req.params.id);
+
+    res.render('registerEdit', {userToEdit});
+  },
+  update: async function (req,res) {
+    await db.Users.update(
+      req.body,
+      {
+        where:{
+          id: req.params.id
+        }
+    });
+
+    res.redirect('/users/list');
+  },
+  destroy: async function (req, res) {
+    await db.Users.destroy({
+        where: {id: req.params.id}
+    })
+    res.redirect('/users/list');
+  },
+  list: function(req, res) {
+    db.Users.findAll()
+        .then(function(users){
+            res.render('usersList', {users})
+        });
+  },
+  userProfile: function(req,res) {
+    db.Users.findByPk(req.params.id)
+        .then(function(user){
+            res.render("userProfile", {user})
+        })
+  }
   
-  // users.model.js
-  userProfile: model.userProfile,
+  // // users.model.js
+  // userProfile: model.userProfile,
   
-  list: model.list,
-  // proceso de registro
-	create: model.createUser,
+  // list: model.list,
+  // // proceso de registro
+	// create: model.createUser,
 
-  store: model.storeUser,
+  // store: model.storeUser,
 
-  edit: model.editUser,
+  // edit: model.editUser,
 
-  update: model.updateUser,
+  // update: model.updateUser,
 
-  destroy: model.destroyUser  
+  // destroy: model.destroyUser  
 };
 
 module.exports = controlador;
