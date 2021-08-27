@@ -25,8 +25,7 @@ const controlador = {
   },
   // Procesar informacion vista login
   loginProcess: async (req, res) => {
-    //let userToLogin = model.findByField('email', req.body.email);
-    let userToLogin = await db.Users.findAll({where: {email: req.body.email}});
+    let userToLogin = await db.Users.findOne({where: {email: req.body.email}});
     
     if (userToLogin){
       let isOkThepassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
@@ -84,9 +83,19 @@ const controlador = {
     res.render("register");
   },
   store: async function (req, res) {
-    await db.Users.create(
-        req.body
-    )
+    
+    console.log(req.body);
+     await db.Users.create(
+         {
+           first_name: req.body.first_name,
+           last_name: req.body.last_name,
+           email: req.body.email,
+           password: bcryptjs.hashSync(req.body.password, 10),
+           category: req.body.category,
+           avatar: req.body.avatar
+
+         }
+     )
     res.redirect("/users/list")
   },
   edit: async function(req, res) {
