@@ -24,7 +24,7 @@ const controlador = {
     res.render('login');
   },
   // Procesar informacion vista login
-  async loginProcess: (req, res) => {
+   loginProcess: async (req, res) => {
     let userToLogin = model.findByField('email', req.body.email);
     //let userToLogin = db.Users.findAll({where: {email: req.body.email}});
     let userToLogin = await db.Users.findByField({})
