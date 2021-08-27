@@ -1,8 +1,8 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "password",
-    "database": "game_up",
+    "password": "",
+    "database": "game_up_basic",
     
     "host": "localhost",
     "port": "3306",
