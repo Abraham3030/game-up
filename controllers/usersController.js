@@ -24,9 +24,10 @@ const controlador = {
     res.render('login');
   },
   // Procesar informacion vista login
-  loginProcess: (req, res) => {
+  async loginProcess: (req, res) => {
     let userToLogin = model.findByField('email', req.body.email);
     //let userToLogin = db.Users.findAll({where: {email: req.body.email}});
+    let userToLogin = await db.Users.findByField({})
     
     if (userToLogin){
       let isOkThepassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
