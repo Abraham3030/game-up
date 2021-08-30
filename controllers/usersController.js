@@ -24,11 +24,9 @@ const controlador = {
     res.render('login');
   },
   // Procesar informacion vista login
-   loginProcess: async (req, res) => {
-    //let userToLogin = model.findByField('email', req.body.email);
-    //let userToLogin = db.Users.findAll({where: {email: req.body.email}});
-    //let userToLogin = await db.Users.findByField({})
-    let userToLogin = await db.Users.findOne({where: {email: req.body.email}});
+  loginProcess: async (req, res) => {
+    let userToLogin = model.findByField('email', req.body.email);
+    //let userToLogin = await db.Users.findAll({where: {email: req.body.email}});
     
     if (userToLogin){
       let isOkThepassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
@@ -86,19 +84,9 @@ const controlador = {
     res.render("register");
   },
   store: async function (req, res) {
-    
-    console.log(req.body);
-     await db.Users.create(
-         {
-           first_name: req.body.first_name,
-           last_name: req.body.last_name,
-           email: req.body.email,
-           password: bcryptjs.hashSync(req.body.password, 10),
-           category: req.body.category,
-           avatar: req.body.avatar
-
-         }
-     )
+    await db.Users.create(
+        req.body
+    )
     res.redirect("/users/list")
   },
   edit: async function(req, res) {
@@ -134,22 +122,7 @@ const controlador = {
         .then(function(user){
             res.render("userProfile", {user})
         })
-  }
-  
-  // // users.model.js
-  // userProfile: model.userProfile,
-  
-  // list: model.list,
-  // // proceso de registro
-	// create: model.createUser,
-
-  // store: model.storeUser,
-
-  // edit: model.editUser,
-
-  // update: model.updateUser,
-
-  // destroy: model.destroyUser  
+  } 
 };
 
 module.exports = controlador;

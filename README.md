@@ -1,13 +1,12 @@
 # *__Tematica del Market Place__*
 
-Proyecto integrador: la tematica de nuestro ecommerce sera referente a la venta de videojuegos y articulos de electronica.
+Proyecto integrador: la tematica del ecommerce sera referente a la venta de videojuegos y articulos de electronica.
 
 ## *Descripción*
-Una pagina sencilla de usar con un diseño limpio y llamativo, nuestro audiencia serán personas mayores de 15 años, quienes forman parte del sector que mas consume videojuegos.
+Una pagina sencilla de usar con un diseño limpio y llamativo, nuestra audiencia serán personas mayores de 15 años, quienes forman parte del sector que mas consume videojuegos.
 
 ## *Integrantes*
 - José Abraham Montelongo Campos  
-- César Antonio Villa Flores  
 
 Instructor: Alfonso Banda
 
@@ -35,8 +34,7 @@ https://trello.com/b/m4KvkA41/sprint-4
 
 Enlace Sprint - 5
 https://trello.com/b/34hy1dSr/sprint-5
-udsajdkssdkjdsajkdsjds
 
-dasdfasfdfasfasfsasfafsafsasfafsafsa
+
 
 
