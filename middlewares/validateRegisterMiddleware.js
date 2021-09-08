@@ -1,4 +1,4 @@
-const path = require('path');
+//const path = require('path');
 const { body } = require('express-validator');
 
 module.exports = [
@@ -9,19 +9,20 @@ module.exports = [
 		.isEmail().withMessage('Debes escribir un formato de correo válido'),
 	body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
 	body('category').notEmpty().withMessage('Tienes que elegir una categoria'),
-	body('avatar').custom((value, { req }) => {
-		let file = req.file;
-		let acceptedExtensions = ['.jpg', '.png', '.gif'];
+	body('avatar').notEmpty().withMessage('Tienes que colocar una URL valida de tu avatar')
+	// .custom((value, { req }) => {
+	// 	let file = req.file;
+	// 	let acceptedExtensions = ['.jpg', '.png', '.gif'];
 
-		if (!file) {
-			throw new Error('Tienes que subir una imagen');
-		} else {
-			let fileExtension = path.extname(file.originalname);
-			if (!acceptedExtensions.includes(fileExtension)) {
-				throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
-			}
-		}
+	// 	if (!file) {
+	// 		throw new Error('Tienes que subir una imagen');
+	// 	} else {
+	// 		let fileExtension = path.extname(file.originalname);
+	// 		if (!acceptedExtensions.includes(fileExtension)) {
+	// 			throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+	// 		}
+	// 	}
 
-		return true;
-	})
+	// 	return true;
+	// })
 ]

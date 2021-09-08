@@ -39,6 +39,22 @@ const model = {
 	createUser: (req, res) => {
 	res.render('register');
 	},
+
+
+	// Opciones para verifica que ya existe un correo
+	findByField: function (field, text) {
+		let allUsers = this.findAll();
+		let userFound = allUsers.find(oneUser => oneUser[field] === text);
+		return userFound;
+	},
+	findAll: function () {
+		return this.getData();
+	},
+	fileName: './database/usersDataBase.json',
+
+	getData: function () {
+		return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
+	},
 	// Accion vista crear usuario
 	storeUser: (req, res) => {
 		// Validacion formulario register
@@ -119,23 +135,7 @@ const model = {
 		  
 		fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
 		res.redirect("/users/list");
-	},
-
-
-	// Opciones para verifica que ya existe un correo
-	findByField: function (field, text) {
-		let allUsers = this.findAll();
-		let userFound = allUsers.find(oneUser => oneUser[field] === text);
-		return userFound;
-	},
-	findAll: function () {
-		return this.getData();
-	},
-	fileName: './database/usersDataBase.json',
-
-	getData: function () {
-		return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
-	},
+	}
 
 };
   
