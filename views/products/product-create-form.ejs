@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head') %> 
+    <link rel="stylesheet" href="/css/create.css">
+</head>
+<body>
+    <div class="contenedor-general">
+        <header>                
+            <div class="nav-bar">            
+            <a href="/"><img id="logo" src="/images/logoGameUp.png"/></a>
+            </div>                                
+        </header>
+        <div class="contenedor margen-login-register">
+            <div class="tab-items">
+                <div class="marco">
+                    <p>Crear producto</p>
+                </div>
+            </div>
+            <form action="/products/create" method="POST">
+                <label for="name">Nombre del producto:</label>
+			    <input type="text" id="name" name="name" placeholder="Ej: Resident Evil" class="form-input" value="">
+                <label for="price" class="form-label">Precio del producto:</label>
+				<input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input" value="">
+                <label for="discount" class="form-label">Descuento:</label>
+                <select name="discount" id="discount" class="form-input">
+					<option value="">Elegir opción</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+				</select>
+                <label for="image">Imagen del producto</label>
+                    <input  type="text" 
+                            id="image" 
+                            name="image" 
+                            placeholder="Ejemplo: coloca una direccion URL" 
+                            class="form-input"
+                            value="https://res.cloudinary.com/diwoutxcy/image/upload/v1629681085/kbcuforslejzhujh2lty.jpg"> 
+                <label for="" style="font-size: 10px; padding: 0; margin: 0;">*Coloca una URL de tu imagen sino deja la predeterminada</label>
+                <br>
+                <br>
+                <label for="category" class="form-label">Categoría:</label>
+				<select name="category" id="category" class="form-input">
+					<option value="">Elegir opción</option>
+                    <option value="Videojuego">Videojuego</option>
+                    <option value="Consola">Consola</option>
+                    <option value="Laptop">Laptop</option>
+                    <option value="Accesorios">Accesorios</option>
+				</select>
+                <label for="brand" class="form-label">Marca:</label>
+                <select name="brand" id="brand" class="form-input">
+					<option value="">Elegir opción</option>
+                    <option value="PlayStation">Play Station</option>
+                    <option value="Switch">Nintendo Switch</option>
+                    <option value="Xbox">Xbox</option>
+                    <option value="DELL">DELL</option>
+				</select>
+                <label for="genero" class="form-label">Genero:</label>
+                <select name="genre" id="genre" class="form-input">
+					<option value="">Elegir opción</option>
+                    <option value="Accion">Acción</option>
+                    <option value="Arcade">Arcade</option>
+                    <option value="Aventura">Aventura</option>
+                    <option value="Deportes">Deportes</option>
+                    <option value="Estrategia">Estrategia</option>
+                    <option value="Peleas">Peleas</option>
+                    <option value="Puzzle">Puzzle</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Shooter">Shooter</option>
+				</select>
+                <label for="stock" class="form-label">Cantidad de articulos:</label>
+				<select name="stock" id="stock" class="form-input">
+					<option value="">Elegir opción</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+				</select>
+                <div >
+                    <label for="description" class="form-label">Descipción:</label>
+                    <textarea name="description" id="description" class="form-input"></textarea>
+                </div>
+                <div class="btn-container">
+                    <button class="btn-login" type="submit">Guardar producto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer >
+       <%- include('../partials/footer') %>         
+    </footer>
+</body>
+</html>

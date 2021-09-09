@@ -1,0 +1,314 @@
+*{
+    box-sizing: border-box;    
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #00db82;
+}
+
+.nav-bar {
+    
+    margin: 5% 5% 0 5%;
+    width: 90%;
+    
+}
+
+#logo{
+    width: 100%;
+    max-width: 600px;
+    height: 200px;
+}
+
+.contenedor {
+    border: darkgray solid 2px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    padding: 16px;
+    width: 368px;
+    
+}
+
+.margen-login-register {
+    width: 368px;
+    height: auto;
+}
+
+.contenedor-general {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.tab-items{
+    display: flex;
+    justify-content: space-around;
+    text-align: center; margin: 10px 0;
+    
+
+}
+.marco {
+    width: 100%;
+    border: 1px solid #ccc;
+    font-weight: 600;
+
+}
+
+p,h1,h2,h3,h4,a,input,button,li,label {
+    font-family: 'Signika Negative', sans-serif;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+select, textarea{
+    width: 100%;
+    height: auto;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.form-input {
+    border-radius: 5px;
+    outline: none;
+}
+
+.content-password, .imagen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+#password{
+    border: 0;
+    border-radius: 5px;
+    padding: 12px 20px;
+    margin: 0;
+}
+
+#check{
+    border: solid red 1px;
+    
+}
+.text-danger{
+    color: red;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+/*input file*/
+.file-select {          
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.file-select::before {
+    background-color: white;
+    color: black;
+    display: flex;            
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    content: 'Subir archivo'; /* testo por defecto */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;                
+}
+.file-select input[type="file"] {
+    opacity: 0;
+    width: 100%;
+    display: inline-block;    
+}
+.file-select input[type="file"]:hover{
+    cursor: pointer;
+    background: grey;
+    color: #fff; 
+}
+
+
+/**/
+
+/*Nuevo intento de file*/
+.invoiceBox > input {
+    display: none;
+  }
+  .invoiceBox label {
+      display: block;
+  }
+  .boxFile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    font-family: 'Signika Negative', sans-serif;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .boxFile:hover {
+      cursor: pointer;
+      background: grey;
+      color: #fff;
+  }
+  .boxFile i {
+      display: block;
+      font-size: 26px;
+      margin-bottom: 5px;
+  }
+  .attached,
+  .attached:hover,
+  .attached:focus {
+      background: #00db82;
+      color: #fff;
+      border: 1px solid #ccc;
+  }
+/*Fin nuevo intento*/
+
+img {
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+}
+
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-login {
+    width: 90%;
+    background-color: cornflowerblue;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.btn-login:hover {
+    background-color: #00db82;
+}
+
+
+.footer {
+    display: flex;
+    align-items:flex-start;
+    flex-flow: column;    
+    background-color: #f1f1f2;
+    width: 100%;   
+
+}
+
+.elemento-footer{
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+    border-bottom: grey solid 4px;
+    margin: 8px;
+    margin-right: 16px;
+    width: 95%;
+    
+    
+}
+
+.terminos {
+    margin: 8px;
+}
+
+.detalles-producto label:hover, .caracteristicas label:hover {
+    color: #00db82;
+}
+
+.footer-1200 {
+    display: none;
+}
+
+
+@media(min-width: 768px) {
+
+    .footer{
+        display: none;        
+    }
+    .footer-1200 ul li {
+        margin-left: -40px;
+    }
+    .footer-1200{
+        display: flex;  
+        justify-content: space-evenly;      
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+        background-color: #FAFAFA;
+
+    }
+
+    .footer-1200  ul > li > a{
+        text-decoration: none;
+        color: black;
+    }
+
+    .footer-1200  ul > li > a:hover{
+        color: #00db82;
+    }
+
+    .footer-1200 ul  {
+        list-style-type: none;
+        margin: 0px
+    }
+
+    .footer-1200  h2 {
+        margin-bottom: 0px;
+    }
+
+    .logos-social-media {                   
+        display: inline-block;        
+        align-items: stretch;
+        
+        
+    }
+
+    .logos-social-media > img {
+        max-width: 25px;
+        height: auto;
+        margin: 5px;
+        align-items: center;
+        
+    }    
+
+    
+}
